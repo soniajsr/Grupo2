@@ -1,0 +1,165 @@
+﻿@using Sismuni.Presentacion.Web.Resources
+@using Sismuni.Presentacion.Web.Helpers.Html
+@using System.ComponentModel
+
+
+<link href="~/Resources/Template/css/NewTransparencia.css" rel="stylesheet" />
+
+@model Sismuni.Presentacion.Web.Models.Transparencia.GestionSolicitud.SolicitudEditorModelo
+@{
+    Layout = "~/Views/Shared/_Master.cshtml";
+    ViewBag.TituloMenu = "@";
+}
+
+@using (Html.BeginSecureForm("Registrar", "Solicitud", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "SolicitudForm" }))
+{
+
+    <!--<span id="titlebar" class="titlebarTitle">Gestión de Solicitud</span> --> 
+
+    //Campos ocultos
+    @Html.HiddenFor(m => m.Solicitud.NumeroSolicitud)
+
+    //Mensajes
+    @Html.Partial("_Mensajes", Model)
+
+    <div class="col-sm-14">
+        <div class="col-sm-12">
+            
+                   
+                <div class="sigen-right sigen-point">                    
+                    <a title="Regresar" class="glyphicon glyphicon-circle-arrow-left" href="@Url.Action("Buscar", "SolicitudBandeja", new { back = true })"></a> <a title="Regresar" href="@Url.Action("Buscar", "SolicitudBandeja", new { back = true })"></a> 
+                </div>
+
+  
+
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.LabelFor(m => m.Solicitud.Tipo_Informacion, "Tipo Informacion:(*) ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(m => m.Solicitud.Tipo_Informacion, Model.TipoInformacion, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="sigen-group">
+                        @Html.Label("Nombres Responsable: ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.Nombres_Responsable, new { @class = "form-control" , @disabled = true })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.LabelFor(m => m.Solicitud.TipoDocumento, "Tipo Doc:(*) ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(m => m.Solicitud.TipoDocumento, Model.TipoDocumento, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="sigen-group">
+                        @Html.Label("Número Documento:(*) ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.NumeroDocumento, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.Label("Nombres:(*) ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.NombresSolicitante, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="sigen-group">
+                        @Html.Label("Apellido Paterno:(*) ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.ApellidoPaternoSolicitante, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.Label("Apellido Materno: ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.ApellidoMaternoSolicitante, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="sigen-group">
+                        @Html.Label("Teléfono: ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.Telefono, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.Label("Celular: ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.Celular, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="sigen-group">
+                        @Html.Label("Email: ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.Email, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.LabelFor(m => m.Solicitud.Modo_Envio, "Modo Envio:(*) ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(m => m.Solicitud.Modo_Envio, Model.ModoEnvio, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="sigen-group">
+                        @Html.Label("Direccion: ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.Solicitud.Direccion, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.LabelFor(m => m.Solicitud.Observaciones, "Observaciones: (*)", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10 col-sm-10-1">
+                            @Html.TextAreaFor(m => m.Solicitud.Observaciones, new { @class = "form-control", @placeholder = "Observaciones", @maxlength = "200", @rows = 10, @cols = 1007 })
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+
+                </div>
+
+         
+            <br />
+
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12 text-center">
+                <div class="infoReq">(*) Datos requeridos</div>
+                <button class="myButton" id="btn-Grabar">@Botones.btnGrabar</button>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        solicitudjs.iniciar();
+    });
+</script>

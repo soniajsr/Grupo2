@@ -1,0 +1,52 @@
+﻿@using Sismuni.Presentacion.Web.Resources
+@using Sismuni.Presentacion.Web.Helpers.Html
+
+@model Sismuni.Presentacion.Web.Models.Transparencia.GestionSolicitud.SolicitudPaginadoModelo
+@{
+    var grid = new WebGrid
+    (
+        rowsPerPage: Model.Grid.TamanioPagina,
+        canSort: Model.Grid.TotalPagina > 0,
+        ajaxUpdateContainerId: "grid-det"
+    );
+    grid.Bind(Model.Grid.ElementosPagina, autoSortAndPage: false, rowCount: Model.Grid.TotalPagina);
+}
+
+<div class="sigen-right sigen-point newlink">
+    <a class="newFrm" title="Nuevo" href="@Url.Action("Editor", "Solicitud")">Nuevo</a> <a title="Nuevo" class="glyphicon glyphicon-plus-sign" href="@Url.Action("Editor", "Solicitud")"></a>
+</div>
+
+
+@grid.Table(
+                  fillEmptyRows: false,
+                  headerStyle: "sigen-head min-w",
+                  tableStyle: "table table-striped table-bordered table-condensed sigen-table-grid",
+                  columns: new[]
+                  {
+                          //grid.Column("IDENCUESTA", "Id", style:"sigen-column-left"),
+                          grid.Column("NumeroSolicitud", "Nro. Solicitud", style:"sigen-column-left" ),
+                          grid.Column("FechaSolicitud",
+                                        header: "Fecha Solicitud",
+                                        format: p=>p.FechaSolicitud == null ? string.Empty : p.FechaSolicitud.ToString(Formatos.FechaCorta)),
+                          grid.Column("Nombres_Completos_Solicitante", "Nombres y Apellidos", style:"sigen-column-left" ),
+                          grid.Column("Nombre_Tipo_Documento", "Tipo Documento", style:"sigen-column-left" ),
+                          grid.Column("NumeroDocumento", "Nro.Documento", style:"sigen-column-left" ),
+                          grid.Column("Nombre_Estado", "Estado Solicitud", style:"sigen-column-left" ),
+                          grid.Column("", "Opciones",
+                        @<text>
+                            @Html.ActionLink(" ", "Editor", "Solicitud", new { id = item.NumeroSolicitud }, new { @title = "Modificar", @class = "sigen-width-20 glyphicon glyphicon-pencil" })
+                            @Html.ActionLink(" ", "Editor", "Solicitud", new { id = item.NumeroSolicitud }, new { @title = "Hoja de Ruta", @class = "sigen-width-20 glyphicon glyphicon-book" })
+                        </text>
+                            )
+
+
+                  })
+<div class="text-center" id="grid-det-foot">
+    @grid.PagerList(mode: WebGridPagerModes.All)
+</div>
+
+
+
+
+
+

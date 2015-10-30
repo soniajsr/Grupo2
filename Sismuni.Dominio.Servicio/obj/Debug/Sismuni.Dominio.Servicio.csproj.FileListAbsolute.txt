@@ -1,0 +1,5 @@
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Dominio.Servicio.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Dominio.Servicio.pdb
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Servicio.csprojResolveAssemblyReference.cache
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Servicio.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Servicio.pdb

@@ -1,0 +1,11 @@
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\bin\Debug\Sismini.Transversal.Mapeo.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\bin\Debug\Sismini.Transversal.Mapeo.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\bin\Debug\AutoMapper.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\bin\Debug\Microsoft.Practices.Unity.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\obj\Debug\Sismini.Transversal.Mapeo.Recursos.EstadosValor.resources
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\obj\Debug\Sismini.Transversal.Mapeo.Recursos.Operadores.resources
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\obj\Debug\Sismuni.Transversal.Mapeo.csproj.GenerateResource.Cache
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\obj\Debug\Sismini.Transversal.Mapeo.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismini.Transversal.Mapeo\obj\Debug\Sismini.Transversal.Mapeo.pdb

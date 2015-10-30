@@ -1,0 +1,74 @@
+﻿/* ESTILOS PERSONLIZASO PARA GRILLAS */
+.sigen-table-grid {
+}
+
+    .sigen-table-grid thead a {
+        /*color: #333;*/
+        color: #ffffff;
+    }
+
+    .sigen-table-grid tbody a {
+        cursor: pointer;
+    }
+
+    .sigen-table-grid th, .sigen-table-grid td {
+        text-align: center;
+    }
+     
+    .sigen-table-grid , .sigen-column-center {
+        text-align: center;
+    }
+
+    .sigen-table-grid .sigen-column-righ {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    .sigen-table-grid .sigen-column-left {
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    .sigen-table-grid .sigen-head {
+        background-color: #585A5C;/*#12A59F;*/
+        color: #ffffff;
+        /*
+        color: #333;
+        background-color: #d9edf7;
+        */
+    }
+        /*
+        .sigen-table-grid .sigen-head a {
+            color: #ffffff;
+        }
+        */
+
+.pagination > .sigen-active > a,
+.pagination > .sigen-active > a:hover,
+.pagination > .sigen-active > a:focus {
+    z-index: 2;
+    color: #333;
+    cursor: default;
+    background-color: #d9edf7;
+    border-color: #428bca;
+}
+
+.sigen-max-height {
+    margin: 0px 0px;
+}
+
+.sigen-foot-page {
+    color: rgb(153, 153, 153);
+}
+
+.sigen-grid-scroll {
+    overflow: auto; 
+    top: 48px; 
+    height: 165px;
+}
+
+ .sigen-chk-scroll {
+    overflow: auto; 
+    top: 48px;    
+    height: 300px;     
+}

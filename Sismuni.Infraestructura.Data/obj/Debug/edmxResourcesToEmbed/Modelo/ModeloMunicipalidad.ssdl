@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UPC_MUNIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UsuarioTrabajador">
+    <Key>
+      <PropertyRef Name="IdUsuarioTrabajador" />
+    </Key>
+    <Property Name="IdUsuarioTrabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdArea" Type="int" Nullable="false" />
+    <Property Name="IdCargo" Type="int" Nullable="false" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ApePaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApeMaterno" Type="varchar" MaxLength="50" />
+    <Property Name="IdDocumento" Type="int" Nullable="false" />
+    <Property Name="NroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="FechaCese" Type="datetime" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CO_Area">
+    <Key>
+      <PropertyRef Name="ID_Area" />
+    </Key>
+    <Property Name="ID_Area" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Area" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="CO_Cargo">
+    <Key>
+      <PropertyRef Name="ID_Cargo" />
+    </Key>
+    <Property Name="ID_Cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Cargo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="CO_Ciudadano">
+    <Key>
+      <PropertyRef Name="ID_Ciudadano" />
+    </Key>
+    <Property Name="ID_Ciudadano" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Apellido_Paterno" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Apellido_Materno" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Numero_Documento" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_Tipo_Documento" Type="int" Nullable="false" />
+    <Property Name="Razon_Social" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CO_Documento">
+    <Key>
+      <PropertyRef Name="ID_Documento" />
+    </Key>
+    <Property Name="ID_Documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Documento" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CO_Empleado">
+    <Key>
+      <PropertyRef Name="ID_Empleado" />
+    </Key>
+    <Property Name="ID_Empleado" Type="int" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido_Paterno" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido_Materno" Type="varchar" MaxLength="50" />
+    <Property Name="Numero_Documento" Type="varchar" MaxLength="20" />
+    <Property Name="Fecha_Ingreso" Type="date" />
+    <Property Name="Fecha_Cese" Type="date" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="Telefono" Type="varchar" MaxLength="255" />
+    <Property Name="ID_Tipo_Documento" Type="varchar" MaxLength="5" />
+    <Property Name="Fecha_Nacimiento" Type="date" />
+    <Property Name="Direccion" Type="varchar" MaxLength="255" />
+    <Property Name="Celular" Type="varchar" MaxLength="15" />
+    <Property Name="ID_Area" Type="int" />
+    <Property Name="ID_Cargo" Type="int" />
+  </EntityType>
+  <EntityType Name="CO_Expediente_Elim">
+    <Key>
+      <PropertyRef Name="ID_Expediente" />
+    </Key>
+    <Property Name="ID_Expediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_OrganizacionSocial" Type="int" Nullable="false" />
+    <Property Name="ID_Usuario" Type="int" Nullable="false" />
+    <Property Name="ID_Ciudadano" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CO_Perfil">
+    <Key>
+      <PropertyRef Name="ID_Perfil" />
+    </Key>
+    <Property Name="ID_Perfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="CO_Rol">
+    <Key>
+      <PropertyRef Name="ID_Rol" />
+    </Key>
+    <Property Name="ID_Rol" Type="int" Nullable="false" />
+    <Property Name="ID_UsuarioRol" Type="int" />
+    <Property Name="ID_PerfilRol" Type="int" />
+    <Property Name="CodigoModuloRol" Type="int" />
+    <Property Name="DescripcionModuloRol" Type="varchar" MaxLength="50" />
+    <Property Name="EjecutarRol" Type="int" />
+    <Property Name="CosultarRol" Type="int" />
+    <Property Name="ModificaRol" Type="int" />
+    <Property Name="EstadoRol" Type="int" />
+  </EntityType>
+  <EntityType Name="CO_Tipo_Documento">
+    <Key>
+      <PropertyRef Name="ID_Tipo_Documento" />
+    </Key>
+    <Property Name="ID_Tipo_Documento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Abreviatura" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CO_Tramite">
+    <Key>
+      <PropertyRef Name="ID_Tramite" />
+    </Key>
+    <Property Name="ID_Tramite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NroTramite" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="FechaEmision" Type="datetime" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="45" />
+    <Property Name="IdSolicitudTramite" Type="int" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CO_Ubigeo">
+    <Key>
+      <PropertyRef Name="ID_Ubigeo" />
+    </Key>
+    <Property Name="ID_Ubigeo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Departamento" Type="varchar" MaxLength="255" />
+    <Property Name="Provincia" Type="varchar" MaxLength="255" />
+    <Property Name="Distrito" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CO_Usuario">
+    <Key>
+      <PropertyRef Name="ID_Usuario" />
+    </Key>
+    <Property Name="ID_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Empleado" Type="int" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" />
+    <Property Name="Clave" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="LI_disponibilidadinspector">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaHoraInicio" Type="datetime" />
+    <Property Name="fechaHoraFin" Type="datetime" />
+    <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="idInspector" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LI_informeinspeccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreArchivo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="idInspeccion" Type="int" Nullable="false" />
+    <Property Name="fechaCreacion" Type="datetime" />
+    <Property Name="fechaActualizacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LI_inspeccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaHoraInicio" Type="datetime" />
+    <Property Name="fechaHoraFin" Type="datetime" />
+    <Property Name="estado" Type="varchar" MaxLength="255" />
+    <Property Name="observaciones" Type="varchar" MaxLength="255" />
+    <Property Name="idSolicitudLicencia" Type="int" Nullable="false" />
+    <Property Name="idInspector" Type="int" Nullable="false" />
+    <Property Name="iddisponibilidad" Type="int" />
+  </EntityType>
+  <EntityType Name="LI_solicitudlicencia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_Ciudadano" Type="int" Nullable="false" />
+    <Property Name="FechaSolicitud" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NO_Expediente_Elim">
+    <Key>
+      <PropertyRef Name="idNumeroExpediente" />
+    </Key>
+    <Property Name="idNumeroExpediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTipoExpediente" Type="int" Nullable="false" />
+    <Property Name="idNumeroSolicitud" Type="int" Nullable="false" />
+    <Property Name="FechaExpediente" Type="datetime" />
+    <Property Name="Asunto" Type="varchar" MaxLength="400" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="NO_InformacionMunicipal">
+    <Key>
+      <PropertyRef Name="NumeroInformacionMunicipal" />
+    </Key>
+    <Property Name="NumeroInformacionMunicipal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idNUmeroSolicitud" Type="int" Nullable="false" />
+    <Property Name="CodigoDocumento" Type="varchar" MaxLength="20" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" />
+    <Property Name="VersionIM" Type="varchar" MaxLength="10" />
+    <Property Name="SubTipoInformacion" Type="varchar" MaxLength="20" />
+    <Property Name="CategoriaInformación" Type="varchar" MaxLength="20" />
+    <Property Name="Fechaemision" Type="datetime" />
+    <Property Name="FechaVigencia" Type="datetime" />
+    <Property Name="TipoInformacion" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="NO_InformeMunicipal">
+    <Key>
+      <PropertyRef Name="idNumeroInforme" />
+    </Key>
+    <Property Name="idNumeroInforme" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idNumeroSolicitud" Type="int" Nullable="false" />
+    <Property Name="FechaInforme" Type="datetime" />
+    <Property Name="NombresSolicitante" Type="varchar" MaxLength="50" />
+    <Property Name="ApellidoSoliciante" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="Observacion" Type="varchar" MaxLength="500" />
+    <Property Name="TipoInforme" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="NO_SolicitudInformacionArea">
+    <Key>
+      <PropertyRef Name="idSolicitudInformacion" />
+    </Key>
+    <Property Name="idSolicitudInformacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Tramite" Type="int" Nullable="false" />
+    <Property Name="ID_Empleado" Type="int" Nullable="false" />
+    <Property Name="FechaSolicitud" Type="datetime" />
+    <Property Name="Observacio" Type="varchar" MaxLength="400" />
+    <Property Name="Estado" Type="varchar" MaxLength="10" />
+    <Property Name="Tipo" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="NO_SolicitudInformacionMunicipal">
+    <Key>
+      <PropertyRef Name="idNumeroSolicitud" />
+    </Key>
+    <Property Name="idNumeroSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaSolicitud" Type="datetime" />
+    <Property Name="NombresSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="ApellidoPaternoSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="ApellidoMaternoSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="30" />
+    <Property Name="Direccion" Type="varchar" MaxLength="70" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="60" />
+    <Property Name="Modo_Envio" Type="varchar" MaxLength="40" />
+    <Property Name="Tipo_Informacion" Type="varchar" MaxLength="7" />
+    <Property Name="Motivo_Solicitud" Type="varchar" MaxLength="150" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="NO_TipoExpediente_Elim">
+    <Key>
+      <PropertyRef Name="idTipoExpediente" />
+    </Key>
+    <Property Name="idTipoExpediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionTipoExpediente" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PR_Categoria">
+    <Key>
+      <PropertyRef Name="idCategoria" />
+    </Key>
+    <Property Name="idCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idGenericasCategoria" Type="int" Nullable="false" />
+    <Property Name="DescripcionCategoria" Type="varchar" MaxLength="50" />
+    <Property Name="TipoCategoria" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="PR_Figuracion">
+    <Key>
+      <PropertyRef Name="idTabla" />
+    </Key>
+    <Property Name="idTabla" Type="int" Nullable="false" />
+    <Property Name="CodigoTabla" Type="varchar" MaxLength="10" />
+    <Property Name="Campo1" Type="varchar" MaxLength="50" />
+    <Property Name="Campo2" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PR_Genericas">
+    <Key>
+      <PropertyRef Name="idGenericas" />
+    </Key>
+    <Property Name="idGenericas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionGenericas" Type="varchar" MaxLength="50" />
+    <Property Name="TipoGenerica" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="PR_Gerencia">
+    <Key>
+      <PropertyRef Name="idGerencia" />
+    </Key>
+    <Property Name="idGerencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionGerencia" Type="varchar" MaxLength="50" />
+    <Property Name="EstadoGerencia" Type="int" />
+  </EntityType>
+  <EntityType Name="PR_Jefatura">
+    <Key>
+      <PropertyRef Name="idJefatura" />
+    </Key>
+    <Property Name="idJefatura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescripcionJefatura" Type="varchar" MaxLength="50" />
+    <Property Name="EstadoJefatura" Type="int" />
+  </EntityType>
+  <EntityType Name="PR_Presupuesto">
+    <Key>
+      <PropertyRef Name="idPresupuesto" />
+    </Key>
+    <Property Name="idPresupuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idVersion" Type="int" Nullable="false" />
+    <Property Name="idCategoriaPresupuesto" Type="int" Nullable="false" />
+    <Property Name="idGenericaPresupuesto" Type="int" Nullable="false" />
+    <Property Name="idAreaPresupuesto" Type="int" Nullable="false" />
+    <Property Name="idSolicitudPresupuesto" Type="int" Nullable="false" />
+    <Property Name="FechaPresupuesto" Type="datetime" />
+    <Property Name="AnnoPresupuesto" Type="char" MaxLength="10" />
+    <Property Name="PeriodoPresupuesto" Type="char" MaxLength="10" />
+    <Property Name="TipoCuentaPresupuesto" Type="char" MaxLength="1" />
+    <Property Name="TotalPresupuesto" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="PR_Solicitud">
+    <Key>
+      <PropertyRef Name="idSolicitud" />
+    </Key>
+    <Property Name="idSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeroSolicitud" Type="int" />
+    <Property Name="FechaSolicitud" Type="datetime" />
+    <Property Name="idCategoriaSolicitud" Type="int" />
+    <Property Name="idGenericasSolicitud" Type="int" />
+    <Property Name="PeriodoSolicitud" Type="nchar" MaxLength="10" />
+    <Property Name="TotalSolicitud" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="EstadoSolicitud" Type="int" />
+  </EntityType>
+  <EntityType Name="PR_Version">
+    <Key>
+      <PropertyRef Name="idVesion" />
+    </Key>
+    <Property Name="idVesion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PV_Acta_Confirmacion_Elim">
+    <Key>
+      <PropertyRef Name="PV_Documentos_ID" />
+    </Key>
+    <Property Name="ID_Requerimiento" Type="int" Nullable="false" />
+    <Property Name="ID_Area" Type="int" Nullable="false" />
+    <Property Name="ID_Empleado" Type="int" Nullable="false" />
+    <Property Name="PV_Documentos_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Acta_reunion">
+    <Key>
+      <PropertyRef Name="ID_Acta_Reunion" />
+    </Key>
+    <Property Name="ID_Acta_Reunion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="ID_Iniciativa_Vecinal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Asunto">
+    <Key>
+      <PropertyRef Name="ID_Asunto" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_Asunto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Tipo_Reporte" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_DetalleExpediente_Elim">
+    <Key>
+      <PropertyRef Name="ID_Expediente" />
+      <PropertyRef Name="ID_RequisitoOrganizacion" />
+    </Key>
+    <Property Name="FechaValidacion" Type="date" Nullable="false" />
+    <Property Name="CumpleRequisito" Type="bit" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="RutaArchivo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_Expediente" Type="int" Nullable="false" />
+    <Property Name="ID_RequisitoOrganizacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_DetalleRequisito_Elim">
+    <Key>
+      <PropertyRef Name="PV_RequisitoOrganizacion_ID" />
+    </Key>
+    <Property Name="NombreDetalleReq" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PV_RequisitoOrganizacion_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_DocumentoAdjunto_Elim">
+    <Key>
+      <PropertyRef Name="PV_DocumentosRequerimientos_PV_Documentos_ID" />
+    </Key>
+    <Property Name="NombreDoc" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="RutaDoc" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PV_Area_ID" Type="int" Nullable="false" />
+    <Property Name="PV_Documentos_ID" Type="int" Nullable="false" />
+    <Property Name="PV_DocumentosRequerimientos_PV_Documentos_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_DocumentosRequerimientos_Elim">
+    <Key>
+      <PropertyRef Name="PV_Documentos_ID" />
+    </Key>
+    <Property Name="Observacion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+    <Property Name="PV_Documentos_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_DocumentoValidado_Elim">
+    <Key>
+      <PropertyRef Name="PV_RequisitoOrganizacion_ID" />
+      <PropertyRef Name="PV_Expediente_ID" />
+      <PropertyRef Name="PV_DetalleExpediente_PV_RequisitoOrganizacion_ID" />
+    </Key>
+    <Property Name="FechaValidacion" Type="date" Nullable="false" />
+    <Property Name="CumpleRequisito" Type="bit" Nullable="false" />
+    <Property Name="PV_RequisitoOrganizacion_ID" Type="int" Nullable="false" />
+    <Property Name="PV_Expediente_ID" Type="int" Nullable="false" />
+    <Property Name="PV_DetalleExpediente_PV_RequisitoOrganizacion_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Estado_Elim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="PV_Informe_Gerencia_Elim">
+    <Key>
+      <PropertyRef Name="PV_Documentos_ID" />
+    </Key>
+    <Property Name="Aprobacion" Type="int" Nullable="false" />
+    <Property Name="PV_Requerimiento_ID" Type="int" Nullable="false" />
+    <Property Name="PV_Documentos_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Informe_Sectorista_Elim">
+    <Key>
+      <PropertyRef Name="PV_Documentos_ID" />
+    </Key>
+    <Property Name="ID_Area" Type="int" />
+    <Property Name="PV_Documentos_ID" Type="int" Nullable="false" />
+    <Property Name="ID_Requerimiento" Type="int" />
+  </EntityType>
+  <EntityType Name="PV_InformeInspeccion_Elim">
+    <Key>
+      <PropertyRef Name="PV_InformeInspeccion_ID" />
+    </Key>
+    <Property Name="PV_InformeInspeccion_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaInspeccion" Type="datetime" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ZonaIntangible" Type="bit" Nullable="false" />
+    <Property Name="AprobarInforme" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Iniciativa_Vecinal">
+    <Key>
+      <PropertyRef Name="ID_Iniciativa_Vecinal" />
+    </Key>
+    <Property Name="ID_Iniciativa_Vecinal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Hora" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descripcion_Corta" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Detalle_Iniciativa" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Fecha_Notificacion" Type="datetime" Nullable="false" />
+    <Property Name="ID_Sector" Type="int" Nullable="false" />
+    <Property Name="ID_Ciudadano" Type="int" Nullable="false" />
+    <Property Name="ID_SubSector" Type="int" />
+  </EntityType>
+  <EntityType Name="PV_NivelOrganizacion_Elim">
+    <Key>
+      <PropertyRef Name="PV_NivelOrganizacion_ID" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FlDistrito" Type="bit" Nullable="false" />
+    <Property Name="PV_NivelOrganizacion_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_OrganizacionSocial_Elim">
+    <Key>
+      <PropertyRef Name="PV_OrganizacionSocial_ID" />
+    </Key>
+    <Property Name="Fecha_inscripcion" Type="datetime" Nullable="false" />
+    <Property Name="CodigoRUOS" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FechaFundacion" Type="date" Nullable="false" />
+    <Property Name="DescripcionObjetivo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NombreOrganizacion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PV_OrganizacionSocial_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PV_Sector_ID" Type="int" Nullable="false" />
+    <Property Name="PV_TipoOrganizacion_ID" Type="int" Nullable="false" />
+    <Property Name="PV_NivelOrganizacion_ID" Type="int" />
+    <Property Name="PV_InformeInspeccion_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Participantes_Organizacion_Elim">
+    <Key>
+      <PropertyRef Name="PV_OrganizacionSocial_ID" />
+      <PropertyRef Name="PV_Ciudadano_ID" />
+    </Key>
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="ParticipanteValido" Type="bit" Nullable="false" />
+    <Property Name="PV_OrganizacionSocial_ID" Type="int" Nullable="false" />
+    <Property Name="PV_Ciudadano_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Reporte_Elim">
+    <Key>
+      <PropertyRef Name="PV_Reporte_ID" />
+    </Key>
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="FechaIncio" Type="date" Nullable="false" />
+    <Property Name="FechaFin" Type="date" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Contexto" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PV_Reporte_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PV_Requerimiento_ID" Type="int" Nullable="false" />
+    <Property Name="PV_Usuario_ID" Type="int" />
+    <Property Name="PV_Tipo_Reporte_ID" Type="int" Nullable="false" />
+    <Property Name="PV_Trabajador_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_ReporteObs_Elim">
+    <Key>
+      <PropertyRef Name="PV_Reporte_ID" />
+      <PropertyRef Name="PV_OrganizacionSocial_ID" />
+    </Key>
+    <Property Name="PV_Reporte_ID" Type="int" Nullable="false" />
+    <Property Name="PV_OrganizacionSocial_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Requerimiento">
+    <Key>
+      <PropertyRef Name="ID_Requerimiento" />
+    </Key>
+    <Property Name="ID_Requerimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FechaRequerimiento" Type="datetime" Nullable="false" />
+    <Property Name="ID_Iniciativa_Vecinal" Type="int" Nullable="false" />
+    <Property Name="ID_Area" Type="int" Nullable="false" />
+    <Property Name="ID_Empleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_RequisitoOrganizacion_Elim">
+    <Key>
+      <PropertyRef Name="PV_RequisitoOrganizacion_ID" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="flRequerido" Type="bit" Nullable="false" />
+    <Property Name="PV_RequisitoOrganizacion_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Reunion">
+    <Key>
+      <PropertyRef Name="ID_Reunion" />
+    </Key>
+    <Property Name="ID_Reunion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Reunion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Fecha_Reunion" Type="datetime" Nullable="false" />
+    <Property Name="Hora_Primera_Cita" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Hora_Segunda_Cita" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Otros_Acuerdos" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_Iniciativa_Vecinal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Sector">
+    <Key>
+      <PropertyRef Name="ID_Sector" />
+    </Key>
+    <Property Name="ID_Sector" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_SubSector">
+    <Key>
+      <PropertyRef Name="ID_SubSector" />
+    </Key>
+    <Property Name="ID_SubSector" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Sector" Type="int" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="PV_SubTipoOrganizacion_Elim">
+    <Key>
+      <PropertyRef Name="PV_TipoOrganizacion_ID" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PV_TipoOrganizacion_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_SubTipoRequisto_Elim">
+    <Key>
+      <PropertyRef Name="PV_RequisitoOrganizacion_ID" />
+      <PropertyRef Name="PV_TipoOrganizacion_ID" />
+    </Key>
+    <Property Name="PV_RequisitoOrganizacion_ID" Type="int" Nullable="false" />
+    <Property Name="PV_TipoOrganizacion_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Tipo_Reporte_Elim">
+    <Key>
+      <PropertyRef Name="PV_Tipo_Reporte_ID" />
+    </Key>
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PV_Tipo_Reporte_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_TipoOrganizacion_Elim">
+    <Key>
+      <PropertyRef Name="PV_TipoOrganizacion_ID" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PV_TipoOrganizacion_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PV_Vecino">
+    <Key>
+      <PropertyRef Name="ID_Ciudadano" />
+    </Key>
+    <Property Name="Direccion_Predio" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Delegado_Vecinal" Type="varchar" MaxLength="100" />
+    <Property Name="ID_Ciudadano" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_DetalleSolicitudTramite">
+    <Key>
+      <PropertyRef Name="IdDetalleSolicitudTramite" />
+    </Key>
+    <Property Name="IdDetalleSolicitudTramite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSolicitudTramite" Type="int" Nullable="false" />
+    <Property Name="Informacion" Type="varchar" MaxLength="50" />
+    <Property Name="NombreAdjunto" Type="varchar" MaxLength="150" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="250" />
+    <Property Name="RutaAdjunto" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TR_RequisitoTramite">
+    <Key>
+      <PropertyRef Name="IdRequisitoTramite" />
+    </Key>
+    <Property Name="IdRequisitoTramite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="ID_Tipo_Tramite" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_SolicitudTramite">
+    <Key>
+      <PropertyRef Name="IdSolicitudTramite" />
+    </Key>
+    <Property Name="IdSolicitudTramite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NroSolicitud" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="CodigoOperacion" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="FechaSolicitud" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="ID_Ciudadano" Type="int" Nullable="false" />
+    <Property Name="ID_Tipo_Tramite" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TR_Tipo_Tramite">
+    <Key>
+      <PropertyRef Name="ID_Tipo_Tramite" />
+    </Key>
+    <Property Name="ID_Tipo_Tramite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Vigencia" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="IdArea" />
+    </Key>
+    <Property Name="IdArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GrupoTabla">
+    <Key>
+      <PropertyRef Name="IdGrupo" />
+    </Key>
+    <Property Name="IdGrupo" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NombreGrupo" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Multitabla">
+    <Key>
+      <PropertyRef Name="IdMultitabla" />
+    </Key>
+    <Property Name="IdMultitabla" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="IdGrupo" Type="varchar" MaxLength="4" />
+    <Property Name="NombreValor" Type="varchar" MaxLength="150" />
+    <Property Name="DescripcionLarga" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Expediente">
+    <Key>
+      <PropertyRef Name="NumeroExpediente" />
+    </Key>
+    <Property Name="NumeroExpediente" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaExpediente" Type="datetime" />
+    <Property Name="NumeroSolicitud" Type="bigint" />
+    <Property Name="Tipo_Expediente" Type="varchar" MaxLength="7" />
+    <Property Name="Asunto" Type="varchar" MaxLength="400" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="SolicitudInformacionMunicipal">
+    <Key>
+      <PropertyRef Name="NumeroSolicitud" />
+    </Key>
+    <Property Name="NumeroSolicitud" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaSolicitud" Type="datetime" />
+    <Property Name="NombresSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="ApellidoPaternoSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="ApellidoMaternoSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="TipoDocumento" Type="varchar" MaxLength="7" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="30" />
+    <Property Name="Direccion" Type="varchar" MaxLength="70" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="60" />
+    <Property Name="Modo_Envio" Type="varchar" MaxLength="40" />
+    <Property Name="IdUsuarioTrabajador" Type="int" />
+    <Property Name="Tipo_Informacion" Type="varchar" MaxLength="7" />
+    <Property Name="Motivo_Solicitud" Type="varchar" MaxLength="150" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="300" />
+    <Property Name="Estado" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <Association Name="FK__Expedient__Numer__6A30C649">
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="NumeroSolicitud" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="NumeroSolicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Expedient__Tipo___6B24EA82">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Tipo_Expediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LI_inspec__iddis__52E34C9D">
+    <End Role="LI_disponibilidadinspector" Type="Self.LI_disponibilidadinspector" Multiplicity="0..1" />
+    <End Role="LI_inspeccion" Type="Self.LI_inspeccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LI_disponibilidadinspector">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LI_inspeccion">
+        <PropertyRef Name="iddisponibilidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Multitabl__IdGru__1A14E395">
+    <End Role="GrupoTabla" Type="Self.GrupoTabla" Multiplicity="0..1" />
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoTabla">
+        <PropertyRef Name="IdGrupo" />
+      </Principal>
+      <Dependent Role="Multitabla">
+        <PropertyRef Name="IdGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__Estad__6754599E">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__IdUsu__656C112C">
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioTrabajador">
+        <PropertyRef Name="IdUsuarioTrabajador" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="IdUsuarioTrabajador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__Tipo___66603565">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="Tipo_Informacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__TipoD__6477ECF3">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="TipoDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdAre__3F466844">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdAre__571DF1D5">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdCar__403A8C7D">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdCar__5812160E">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdEst__412EB0B6">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdEst__59063A47">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbExpediente_tbSolicitudInformacionMunicipal">
+    <End Role="NO_SolicitudInformacionMunicipal" Type="Self.NO_SolicitudInformacionMunicipal" Multiplicity="1" />
+    <End Role="NO_Expediente_Elim" Type="Self.NO_Expediente_Elim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NO_SolicitudInformacionMunicipal">
+        <PropertyRef Name="idNumeroSolicitud" />
+      </Principal>
+      <Dependent Role="NO_Expediente_Elim">
+        <PropertyRef Name="idNumeroSolicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbExpediente_tbTipoExpediente">
+    <End Role="NO_TipoExpediente_Elim" Type="Self.NO_TipoExpediente_Elim" Multiplicity="1" />
+    <End Role="NO_Expediente_Elim" Type="Self.NO_Expediente_Elim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NO_TipoExpediente_Elim">
+        <PropertyRef Name="idTipoExpediente" />
+      </Principal>
+      <Dependent Role="NO_Expediente_Elim">
+        <PropertyRef Name="idTipoExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbInformacionMunicipal_tbSolicitudInformacionMunicipal">
+    <End Role="NO_SolicitudInformacionMunicipal" Type="Self.NO_SolicitudInformacionMunicipal" Multiplicity="1" />
+    <End Role="NO_InformacionMunicipal" Type="Self.NO_InformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NO_SolicitudInformacionMunicipal">
+        <PropertyRef Name="idNumeroSolicitud" />
+      </Principal>
+      <Dependent Role="NO_InformacionMunicipal">
+        <PropertyRef Name="idNUmeroSolicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbInformeMunicipal_tbSolicitudInformacionMunicipal">
+    <End Role="NO_SolicitudInformacionMunicipal" Type="Self.NO_SolicitudInformacionMunicipal" Multiplicity="1" />
+    <End Role="NO_InformeMunicipal" Type="Self.NO_InformeMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NO_SolicitudInformacionMunicipal">
+        <PropertyRef Name="idNumeroSolicitud" />
+      </Principal>
+      <Dependent Role="NO_InformeMunicipal">
+        <PropertyRef Name="idNumeroSolicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSolicitudInformacionArea_tbExpediente">
+    <End Role="NO_Expediente_Elim" Type="Self.NO_Expediente_Elim" Multiplicity="1" />
+    <End Role="NO_SolicitudInformacionArea" Type="Self.NO_SolicitudInformacionArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NO_Expediente_Elim">
+        <PropertyRef Name="idNumeroExpediente" />
+      </Principal>
+      <Dependent Role="NO_SolicitudInformacionArea">
+        <PropertyRef Name="ID_Tramite" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UPC_MUNIModelStoreContainer">
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="ControlPatrimonial" store:Type="Tables" />
+    <EntitySet Name="UsuarioTrabajador" EntityType="Self.UsuarioTrabajador" Schema="ControlPatrimonial" store:Type="Tables" />
+    <EntitySet Name="CO_Area" EntityType="Self.CO_Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Cargo" EntityType="Self.CO_Cargo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Ciudadano" EntityType="Self.CO_Ciudadano" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Documento" EntityType="Self.CO_Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Empleado" EntityType="Self.CO_Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Expediente_Elim" EntityType="Self.CO_Expediente_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Perfil" EntityType="Self.CO_Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Rol" EntityType="Self.CO_Rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Tipo_Documento" EntityType="Self.CO_Tipo_Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Tramite" EntityType="Self.CO_Tramite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Ubigeo" EntityType="Self.CO_Ubigeo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CO_Usuario" EntityType="Self.CO_Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LI_disponibilidadinspector" EntityType="Self.LI_disponibilidadinspector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LI_informeinspeccion" EntityType="Self.LI_informeinspeccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LI_inspeccion" EntityType="Self.LI_inspeccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LI_solicitudlicencia" EntityType="Self.LI_solicitudlicencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NO_Expediente_Elim" EntityType="Self.NO_Expediente_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NO_InformacionMunicipal" EntityType="Self.NO_InformacionMunicipal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NO_InformeMunicipal" EntityType="Self.NO_InformeMunicipal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NO_SolicitudInformacionArea" EntityType="Self.NO_SolicitudInformacionArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NO_SolicitudInformacionMunicipal" EntityType="Self.NO_SolicitudInformacionMunicipal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NO_TipoExpediente_Elim" EntityType="Self.NO_TipoExpediente_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Categoria" EntityType="Self.PR_Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Figuracion" EntityType="Self.PR_Figuracion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Genericas" EntityType="Self.PR_Genericas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Gerencia" EntityType="Self.PR_Gerencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Jefatura" EntityType="Self.PR_Jefatura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Presupuesto" EntityType="Self.PR_Presupuesto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Solicitud" EntityType="Self.PR_Solicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PR_Version" EntityType="Self.PR_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Acta_Confirmacion_Elim" EntityType="Self.PV_Acta_Confirmacion_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Acta_reunion" EntityType="Self.PV_Acta_reunion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Asunto" EntityType="Self.PV_Asunto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_DetalleExpediente_Elim" EntityType="Self.PV_DetalleExpediente_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_DetalleRequisito_Elim" EntityType="Self.PV_DetalleRequisito_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_DocumentoAdjunto_Elim" EntityType="Self.PV_DocumentoAdjunto_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_DocumentosRequerimientos_Elim" EntityType="Self.PV_DocumentosRequerimientos_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_DocumentoValidado_Elim" EntityType="Self.PV_DocumentoValidado_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Estado_Elim" EntityType="Self.PV_Estado_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Informe_Gerencia_Elim" EntityType="Self.PV_Informe_Gerencia_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Informe_Sectorista_Elim" EntityType="Self.PV_Informe_Sectorista_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_InformeInspeccion_Elim" EntityType="Self.PV_InformeInspeccion_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Iniciativa_Vecinal" EntityType="Self.PV_Iniciativa_Vecinal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_NivelOrganizacion_Elim" EntityType="Self.PV_NivelOrganizacion_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_OrganizacionSocial_Elim" EntityType="Self.PV_OrganizacionSocial_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Participantes_Organizacion_Elim" EntityType="Self.PV_Participantes_Organizacion_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Reporte_Elim" EntityType="Self.PV_Reporte_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_ReporteObs_Elim" EntityType="Self.PV_ReporteObs_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Requerimiento" EntityType="Self.PV_Requerimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_RequisitoOrganizacion_Elim" EntityType="Self.PV_RequisitoOrganizacion_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Reunion" EntityType="Self.PV_Reunion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Sector" EntityType="Self.PV_Sector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_SubSector" EntityType="Self.PV_SubSector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_SubTipoOrganizacion_Elim" EntityType="Self.PV_SubTipoOrganizacion_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_SubTipoRequisto_Elim" EntityType="Self.PV_SubTipoRequisto_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Tipo_Reporte_Elim" EntityType="Self.PV_Tipo_Reporte_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_TipoOrganizacion_Elim" EntityType="Self.PV_TipoOrganizacion_Elim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PV_Vecino" EntityType="Self.PV_Vecino" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_DetalleSolicitudTramite" EntityType="Self.TR_DetalleSolicitudTramite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_RequisitoTramite" EntityType="Self.TR_RequisitoTramite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_SolicitudTramite" EntityType="Self.TR_SolicitudTramite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TR_Tipo_Tramite" EntityType="Self.TR_Tipo_Tramite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="General" store:Type="Tables" />
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="General" store:Type="Tables" />
+    <EntitySet Name="GrupoTabla" EntityType="Self.GrupoTabla" Schema="General" store:Type="Tables" />
+    <EntitySet Name="Multitabla" EntityType="Self.Multitabla" Schema="General" store:Type="Tables" />
+    <EntitySet Name="Expediente" EntityType="Self.Expediente" Schema="Transparencia" store:Type="Tables" />
+    <EntitySet Name="SolicitudInformacionMunicipal" EntityType="Self.SolicitudInformacionMunicipal" Schema="Transparencia" store:Type="Tables" />
+    <AssociationSet Name="FK__Expedient__Numer__6A30C649" Association="Self.FK__Expedient__Numer__6A30C649">
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Expedient__Tipo___6B24EA82" Association="Self.FK__Expedient__Tipo___6B24EA82">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LI_inspec__iddis__52E34C9D" Association="Self.FK__LI_inspec__iddis__52E34C9D">
+      <End Role="LI_disponibilidadinspector" EntitySet="LI_disponibilidadinspector" />
+      <End Role="LI_inspeccion" EntitySet="LI_inspeccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Multitabl__IdGru__1A14E395" Association="Self.FK__Multitabl__IdGru__1A14E395">
+      <End Role="GrupoTabla" EntitySet="GrupoTabla" />
+      <End Role="Multitabla" EntitySet="Multitabla" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__Estad__6754599E" Association="Self.FK__Solicitud__Estad__6754599E">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__IdUsu__656C112C" Association="Self.FK__Solicitud__IdUsu__656C112C">
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__Tipo___66603565" Association="Self.FK__Solicitud__Tipo___66603565">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__TipoD__6477ECF3" Association="Self.FK__Solicitud__TipoD__6477ECF3">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdAre__3F466844" Association="Self.FK__UsuarioTr__IdAre__3F466844">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdAre__571DF1D5" Association="Self.FK__UsuarioTr__IdAre__571DF1D5">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdCar__403A8C7D" Association="Self.FK__UsuarioTr__IdCar__403A8C7D">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdCar__5812160E" Association="Self.FK__UsuarioTr__IdCar__5812160E">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdEst__412EB0B6" Association="Self.FK__UsuarioTr__IdEst__412EB0B6">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdEst__59063A47" Association="Self.FK__UsuarioTr__IdEst__59063A47">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbExpediente_tbSolicitudInformacionMunicipal" Association="Self.FK_tbExpediente_tbSolicitudInformacionMunicipal">
+      <End Role="NO_SolicitudInformacionMunicipal" EntitySet="NO_SolicitudInformacionMunicipal" />
+      <End Role="NO_Expediente_Elim" EntitySet="NO_Expediente_Elim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbExpediente_tbTipoExpediente" Association="Self.FK_tbExpediente_tbTipoExpediente">
+      <End Role="NO_TipoExpediente_Elim" EntitySet="NO_TipoExpediente_Elim" />
+      <End Role="NO_Expediente_Elim" EntitySet="NO_Expediente_Elim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbInformacionMunicipal_tbSolicitudInformacionMunicipal" Association="Self.FK_tbInformacionMunicipal_tbSolicitudInformacionMunicipal">
+      <End Role="NO_SolicitudInformacionMunicipal" EntitySet="NO_SolicitudInformacionMunicipal" />
+      <End Role="NO_InformacionMunicipal" EntitySet="NO_InformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbInformeMunicipal_tbSolicitudInformacionMunicipal" Association="Self.FK_tbInformeMunicipal_tbSolicitudInformacionMunicipal">
+      <End Role="NO_SolicitudInformacionMunicipal" EntitySet="NO_SolicitudInformacionMunicipal" />
+      <End Role="NO_InformeMunicipal" EntitySet="NO_InformeMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSolicitudInformacionArea_tbExpediente" Association="Self.FK_tbSolicitudInformacionArea_tbExpediente">
+      <End Role="NO_Expediente_Elim" EntitySet="NO_Expediente_Elim" />
+      <End Role="NO_SolicitudInformacionArea" EntitySet="NO_SolicitudInformacionArea" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

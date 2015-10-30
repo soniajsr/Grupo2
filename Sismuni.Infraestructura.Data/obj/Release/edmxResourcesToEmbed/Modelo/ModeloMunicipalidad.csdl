@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UPC_MUNIModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UPC_MUNIEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Estado" EntityType="UPC_MUNIModel.Estado" />
+    <EntitySet Name="UsuarioTrabajador" EntityType="UPC_MUNIModel.UsuarioTrabajador" />
+    <EntitySet Name="Area" EntityType="UPC_MUNIModel.Area" />
+    <EntitySet Name="Cargo" EntityType="UPC_MUNIModel.Cargo" />
+    <EntitySet Name="GrupoTabla" EntityType="UPC_MUNIModel.GrupoTabla" />
+    <EntitySet Name="Multitabla" EntityType="UPC_MUNIModel.Multitabla" />
+    <EntitySet Name="Expediente" EntityType="UPC_MUNIModel.Expediente" />
+    <EntitySet Name="SolicitudInformacionMunicipal" EntityType="UPC_MUNIModel.SolicitudInformacionMunicipal" />
+    <AssociationSet Name="FK__UsuarioTr__IdEst__1FCDBCEB" Association="UPC_MUNIModel.FK__UsuarioTr__IdEst__1FCDBCEB">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__IdUsu__2C3393D0" Association="UPC_MUNIModel.FK__Solicitud__IdUsu__2C3393D0">
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdAre__1DE57479" Association="UPC_MUNIModel.FK__UsuarioTr__IdAre__1DE57479">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdCar__1ED998B2" Association="UPC_MUNIModel.FK__UsuarioTr__IdCar__1ED998B2">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Multitabl__IdGru__1273C1CD" Association="UPC_MUNIModel.FK__Multitabl__IdGru__1273C1CD">
+      <End Role="GrupoTabla" EntitySet="GrupoTabla" />
+      <End Role="Multitabla" EntitySet="Multitabla" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Expedient__Tipo___30F848ED" Association="UPC_MUNIModel.FK__Expedient__Tipo___30F848ED">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__Estad__2D27B809" Association="UPC_MUNIModel.FK__Solicitud__Estad__2D27B809">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__TipoD__2B3F6F97" Association="UPC_MUNIModel.FK__Solicitud__TipoD__2B3F6F97">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Expedient__Numer__300424B4" Association="UPC_MUNIModel.FK__Expedient__Numer__300424B4">
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__Tipo___66603565" Association="UPC_MUNIModel.FK__Solicitud__Tipo___66603565">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="UsuRegistro" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuModifica" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UsuarioTrabajador" Relationship="UPC_MUNIModel.FK__UsuarioTr__IdEst__1FCDBCEB" FromRole="Estado" ToRole="UsuarioTrabajador" />
+  </EntityType>
+  <EntityType Name="UsuarioTrabajador">
+    <Key>
+      <PropertyRef Name="IdUsuarioTrabajador" />
+    </Key>
+    <Property Name="IdUsuarioTrabajador" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IdArea" Type="Int32" Nullable="false" />
+    <Property Name="IdCargo" Type="Int32" Nullable="false" />
+    <Property Name="IdEstado" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ApePaterno" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ApeMaterno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IdDocumento" Type="Int32" Nullable="false" />
+    <Property Name="NroDocumento" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaCese" Type="DateTime" Precision="3" />
+    <Property Name="UsuRegistro" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuModifica" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Estado" Relationship="UPC_MUNIModel.FK__UsuarioTr__IdEst__1FCDBCEB" FromRole="UsuarioTrabajador" ToRole="Estado" />
+    <NavigationProperty Name="SolicitudInformacionMunicipal" Relationship="UPC_MUNIModel.FK__Solicitud__IdUsu__2C3393D0" FromRole="UsuarioTrabajador" ToRole="SolicitudInformacionMunicipal" />
+    <NavigationProperty Name="Area" Relationship="UPC_MUNIModel.FK__UsuarioTr__IdAre__1DE57479" FromRole="UsuarioTrabajador" ToRole="Area" />
+    <NavigationProperty Name="Cargo" Relationship="UPC_MUNIModel.FK__UsuarioTr__IdCar__1ED998B2" FromRole="UsuarioTrabajador" ToRole="Cargo" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="IdArea" />
+    </Key>
+    <Property Name="IdArea" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="UsuRegistro" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuModifica" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UsuarioTrabajador" Relationship="UPC_MUNIModel.FK__UsuarioTr__IdAre__1DE57479" FromRole="Area" ToRole="UsuarioTrabajador" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Activo" Type="Boolean" Nullable="false" />
+    <Property Name="UsuRegistro" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UsuModifica" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="FechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UsuarioTrabajador" Relationship="UPC_MUNIModel.FK__UsuarioTr__IdCar__1ED998B2" FromRole="Cargo" ToRole="UsuarioTrabajador" />
+  </EntityType>
+  <EntityType Name="GrupoTabla">
+    <Key>
+      <PropertyRef Name="IdGrupo" />
+    </Key>
+    <Property Name="IdGrupo" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="NombreGrupo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Estado" Type="Int32" />
+    <NavigationProperty Name="Multitabla" Relationship="UPC_MUNIModel.FK__Multitabl__IdGru__1273C1CD" FromRole="GrupoTabla" ToRole="Multitabla" />
+  </EntityType>
+  <EntityType Name="Multitabla">
+    <Key>
+      <PropertyRef Name="IdMultitabla" />
+    </Key>
+    <Property Name="IdMultitabla" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
+    <Property Name="IdGrupo" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="NombreValor" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="DescripcionLarga" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Estado" Type="Int32" />
+    <NavigationProperty Name="GrupoTabla" Relationship="UPC_MUNIModel.FK__Multitabl__IdGru__1273C1CD" FromRole="Multitabla" ToRole="GrupoTabla" />
+    <NavigationProperty Name="Expediente" Relationship="UPC_MUNIModel.FK__Expedient__Tipo___30F848ED" FromRole="Multitabla" ToRole="Expediente" />
+    <NavigationProperty Name="SolicitudInformacionMunicipal" Relationship="UPC_MUNIModel.FK__Solicitud__Estad__2D27B809" FromRole="Multitabla" ToRole="SolicitudInformacionMunicipal" />
+    <NavigationProperty Name="SolicitudInformacionMunicipal1" Relationship="UPC_MUNIModel.FK__Solicitud__TipoD__2B3F6F97" FromRole="Multitabla" ToRole="SolicitudInformacionMunicipal" />
+    <NavigationProperty Name="SolicitudInformacionMunicipal11" Relationship="UPC_MUNIModel.FK__Solicitud__Tipo___66603565" FromRole="Multitabla" ToRole="SolicitudInformacionMunicipal" />
+  </EntityType>
+  <EntityType Name="Expediente">
+    <Key>
+      <PropertyRef Name="NumeroExpediente" />
+    </Key>
+    <Property Name="NumeroExpediente" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaExpediente" Type="DateTime" Precision="3" />
+    <Property Name="NumeroSolicitud" Type="Int64" />
+    <Property Name="Tipo_Expediente" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+    <Property Name="Asunto" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Estado" Type="Int32" />
+    <NavigationProperty Name="Multitabla" Relationship="UPC_MUNIModel.FK__Expedient__Tipo___30F848ED" FromRole="Expediente" ToRole="Multitabla" />
+    <NavigationProperty Name="SolicitudInformacionMunicipal" Relationship="UPC_MUNIModel.FK__Expedient__Numer__300424B4" FromRole="Expediente" ToRole="SolicitudInformacionMunicipal" />
+  </EntityType>
+  <EntityType Name="SolicitudInformacionMunicipal">
+    <Key>
+      <PropertyRef Name="NumeroSolicitud" />
+    </Key>
+    <Property Name="NumeroSolicitud" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaSolicitud" Type="DateTime" Precision="3" />
+    <Property Name="NombresSolicitante" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ApellidoPaternoSolicitante" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ApellidoMaternoSolicitante" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TipoDocumento" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+    <Property Name="NumeroDocumento" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Direccion" Type="String" MaxLength="70" Unicode="false" FixedLength="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Celular" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="Modo_Envio" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="IdUsuarioTrabajador" Type="Int32" />
+    <Property Name="Tipo_Informacion" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+    <Property Name="Motivo_Solicitud" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="Estado" Type="String" MaxLength="7" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="UsuarioTrabajador" Relationship="UPC_MUNIModel.FK__Solicitud__IdUsu__2C3393D0" FromRole="SolicitudInformacionMunicipal" ToRole="UsuarioTrabajador" />
+    <NavigationProperty Name="Multitabla" Relationship="UPC_MUNIModel.FK__Solicitud__Estad__2D27B809" FromRole="SolicitudInformacionMunicipal" ToRole="Multitabla" />
+    <NavigationProperty Name="Multitabla1" Relationship="UPC_MUNIModel.FK__Solicitud__TipoD__2B3F6F97" FromRole="SolicitudInformacionMunicipal" ToRole="Multitabla" />
+    <NavigationProperty Name="Expediente" Relationship="UPC_MUNIModel.FK__Expedient__Numer__300424B4" FromRole="SolicitudInformacionMunicipal" ToRole="Expediente" />
+    <NavigationProperty Name="Multitabla11" Relationship="UPC_MUNIModel.FK__Solicitud__Tipo___66603565" FromRole="SolicitudInformacionMunicipal" ToRole="Multitabla" />
+  </EntityType>
+  <Association Name="FK__UsuarioTr__IdEst__1FCDBCEB">
+    <End Role="Estado" Type="UPC_MUNIModel.Estado" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="UPC_MUNIModel.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__IdUsu__2C3393D0">
+    <End Role="UsuarioTrabajador" Type="UPC_MUNIModel.UsuarioTrabajador" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="UPC_MUNIModel.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioTrabajador">
+        <PropertyRef Name="IdUsuarioTrabajador" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="IdUsuarioTrabajador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdAre__1DE57479">
+    <End Role="Area" Type="UPC_MUNIModel.Area" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="UPC_MUNIModel.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdCar__1ED998B2">
+    <End Role="Cargo" Type="UPC_MUNIModel.Cargo" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="UPC_MUNIModel.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Multitabl__IdGru__1273C1CD">
+    <End Role="GrupoTabla" Type="UPC_MUNIModel.GrupoTabla" Multiplicity="0..1" />
+    <End Role="Multitabla" Type="UPC_MUNIModel.Multitabla" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoTabla">
+        <PropertyRef Name="IdGrupo" />
+      </Principal>
+      <Dependent Role="Multitabla">
+        <PropertyRef Name="IdGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Expedient__Tipo___30F848ED">
+    <End Role="Multitabla" Type="UPC_MUNIModel.Multitabla" Multiplicity="0..1" />
+    <End Role="Expediente" Type="UPC_MUNIModel.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Tipo_Expediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__Estad__2D27B809">
+    <End Role="Multitabla" Type="UPC_MUNIModel.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="UPC_MUNIModel.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__TipoD__2B3F6F97">
+    <End Role="Multitabla" Type="UPC_MUNIModel.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="UPC_MUNIModel.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="TipoDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Expedient__Numer__300424B4">
+    <End Role="SolicitudInformacionMunicipal" Type="UPC_MUNIModel.SolicitudInformacionMunicipal" Multiplicity="0..1" />
+    <End Role="Expediente" Type="UPC_MUNIModel.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="NumeroSolicitud" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="NumeroSolicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__Tipo___66603565">
+    <End Type="UPC_MUNIModel.Multitabla" Role="Multitabla" Multiplicity="0..1" />
+    <End Type="UPC_MUNIModel.SolicitudInformacionMunicipal" Role="SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="Tipo_Informacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

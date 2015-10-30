@@ -1,0 +1,85 @@
+﻿@using Sismuni.Presentacion.Web.Resources;
+@using Sismuni.Presentacion.Web.Helpers.Html
+@using System.ComponentModel;
+@using Sismuni.Presentacion.Web.Helpers;
+
+<link href="~/Resources/Template/css/datepicker/datepicker3.css" rel="stylesheet" />
+<script src="~/Resources/Template/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="~/Resources/Template/js/plugins/datepicker/locales/bootstrap-datepicker.es.js"></script>
+
+<link href="~/Resources/Template/css/NewTransparencia.css" rel="stylesheet" />
+
+
+@model Sismuni.Presentacion.Web.Models.Transparencia.GestionSolicitud.SolicitudPaginadoModelo
+@{
+    ViewBag.TituloMenu = "Gestión de Solicitudes";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+
+@using (Html.BeginSecureForm("Buscar", "SolicitudBandeja", FormMethod.Get, new { @class = "form-horizontal", role = "form", id = "formSolicitud" }))
+{
+
+    <!--<div class="contitlebaTitle"><span id="titlebar" class="titlebarTitle">Gestión de Solicitud</span></div>-->
+
+    //Mensajes
+    @Html.Partial("_Mensajes", Model)
+
+
+
+        <div class="form-group">
+            @Html.Label("Número Solicitud: ", new { @class = "col-sm-2 control-label" })
+            <div class="col-sm-4">
+                @Html.TextBoxFor(m => m.Filtro.Solicitud.Codigo_Solicitud, new { @class = "form-control" })
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Fecha Inicio: ", new { @class = "col-sm-2 control-label" })
+
+            <div class="col-sm-4">
+                @Html.TextBox("Filtro.Solicitud.FechaInicio",
+                                Model.Filtro.Solicitud.FechaInicio == null ? string.Empty : Model.Filtro.Solicitud.FechaInicio.Value.ToString(Formatos.FechaCorta),
+                                new { @class = "form-control sigen-fecha-corta", @placeholder = "Fecha Inicio" })
+            </div>
+
+            @Html.Label("Fecha Fin: ", new { @class = "col-sm-2 control-label" })
+
+            <div class="col-sm-4">
+                @Html.TextBox("Filtro.Solicitud.FechaFin",
+                                Model.Filtro.Solicitud.FechaFin == null ? string.Empty : Model.Filtro.Solicitud.FechaFin.Value.ToString(Formatos.FechaCorta),
+                                new { @class = "form-control sigen-fecha-corta", @placeholder = "Fecha Fin" })
+            </div>
+
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-sm-12 text-center">
+                <button type="submit" class="myButton">@Botones.btnBuscar</button>
+                <button type="button" class="myButton" onclick="location.href='@Url.Action("Index", "SolicitudBandeja")'">@Botones.btnLimpiar</button>
+            </div>
+        </div>
+
+
+  
+
+    //Resultado paginado
+    <div class="table-responsive">
+        @Html.Partial("_Grid")
+    </div>
+}
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+
+
+        $('#Filtro_Solicitud_FechaInicio').datepicker({ language: 'es', format: 'yyyy-mm-dd', autoclose: true });
+        $('#Filtro_Solicitud_FechaFin').datepicker({ language: 'es', format: 'yyyy-mm-dd', autoclose: true });
+
+
+    });
+</script>

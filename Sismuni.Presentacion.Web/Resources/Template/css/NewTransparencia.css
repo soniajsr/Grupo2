@@ -1,0 +1,88 @@
+﻿.sigen-table-grid .sigen-head {
+        background-color: #71AB56;/*#12A59F;*/
+        color: #ffffff;        
+        /*
+        color: #333;
+        background-color: #d9edf7;
+        */
+    }
+
+.sigen-head th {
+        min-width: 153px!important;
+    }
+
+.min-w th {
+        min-width: 123px!important;
+}
+
+#contenido {
+        width: 975px!important;
+}
+
+.newlink {
+
+    text-align:right;    
+    margin-bottom: 10px; 
+
+}
+
+#wrapper {
+
+    width: 1273px!important;
+
+}
+
+.newFrm {
+    bottom: 2px;
+    position: relative;
+    
+}
+
+.infoReq {
+    text-align:left;
+    font-size: 12px; 
+    margin-left: 13px;
+}
+
+.contitlebaTitle {
+
+    margin-bottom:10px;
+
+}
+
+.labelfrm90 {
+    width: 90px;
+}
+
+.labelfrm80 {
+    width: 80px;
+}
+
+.labelfrm50 {
+    width: 50px;
+}
+
+.labelfrm285 {
+    width: 225px!important;
+}
+
+
+.area490 {
+    width: 490px;
+}
+
+.col-sm-10 {
+    width: 78.333333%;
+}
+
+.col-sm-2 {
+    width: 17.666667%;
+}
+
+.col-sm-4 {
+   width: 32.333333%;
+}
+
+ .col-sm-10-1 {
+    width: 82.333333%!important;
+}

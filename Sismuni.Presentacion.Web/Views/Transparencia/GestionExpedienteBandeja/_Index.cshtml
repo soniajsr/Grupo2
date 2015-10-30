@@ -1,0 +1,84 @@
+﻿
+@using Sismuni.Presentacion.Web.Resources;
+@using Sismuni.Presentacion.Web.Helpers.Html
+@using System.ComponentModel;
+@using Sismuni.Presentacion.Web.Helpers;
+
+<link href="~/Resources/Template/css/datepicker/datepicker3.css" rel="stylesheet" />
+<script src="~/Resources/Template/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="~/Resources/Template/js/plugins/datepicker/locales/bootstrap-datepicker.es.js"></script>
+
+<link href="~/Resources/Template/css/NewTransparencia.css" rel="stylesheet" />
+
+
+@model Sismuni.Presentacion.Web.Models.Transparencia.GestionExpediente.ExpedientePaginadoModelo
+@{
+    ViewBag.TituloMenu = "Gestión de Expedientes Técnicos";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+
+@using (Html.BeginSecureForm("Buscar", "GestionExpedienteBandeja", FormMethod.Get, new { @class = "form-horizontal", role = "form", id = "formExpediente" }))
+{
+
+    <!--<div class="contitlebaTitle"><span id="titlebar" class="titlebarTitle">Gestión de Expediente Técnico</span></div>-->
+
+    //Mensajes
+    @Html.Partial("_Mensajes", Model)
+
+      
+        
+        <div class="form-group">
+            @Html.Label("Número Expediente: ", new { @class = "col-sm-2 control-label labelfrm90" })
+            <div class="col-sm-4">
+                @Html.TextBoxFor(m => m.Filtro.Expediente.Codigo_Expediente, new { @class = "form-control" })
+            </div>
+
+            @Html.Label("Número Solicitud: ", new { @class = "col-sm-2 control-label labelfrm80" })
+            <div class="col-sm-4">
+                @Html.TextBoxFor(m => m.Filtro.Expediente.NumeroSolicitud, new { @class = "form-control" })
+            </div>
+</div>
+<div class="form-group">
+            @Html.Label("Fecha Inicio: ", new { @class = "col-sm-2 control-label labelfrm50" })
+            <div class="col-sm-4">
+                @Html.TextBox("Filtro.Expediente.FECHAINICIO",
+                                Model.Filtro.Expediente.FECHAINICIO == null ? string.Empty : Model.Filtro.Expediente.FECHAINICIO.Value.ToString(Formatos.FechaCorta),
+                                new { @class = "form-control sigen-fecha-corta", @placeholder = "Fecha Inicio" })
+            </div>
+
+            @Html.Label("Fecha Fin: ", new { @class = "col-sm-2 control-label labelfrm50" })
+
+            <div class="col-sm-4">
+                @Html.TextBox("Filtro.Expediente.FECHAFIN",
+                                Model.Filtro.Expediente.FECHAFIN == null ? string.Empty : Model.Filtro.Expediente.FECHAFIN.Value.ToString(Formatos.FechaCorta),
+                                new { @class = "form-control sigen-fecha-corta", @placeholder = "Fecha Fin" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12 text-center">
+                <button type="submit" class="myButton" >@Botones.btnBuscar</button>
+                <button type="button" class="myButton" onclick="location.href='@Url.Action("Index", "GestionExpedienteBandeja")'">@Botones.btnLimpiar</button>
+            </div>
+        </div>
+
+
+   
+
+    //Resultado paginado
+    <div class="table-responsive">
+        @Html.Partial("_Grid")
+    </div>
+}
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        
+
+        $('#Filtro_Expediente_FECHAINICIO').datepicker({ language: 'es', format: 'yyyy-mm-dd', autoclose: true });
+        $('#Filtro_Expediente_FECHAFIN').datepicker({ language: 'es', format: 'yyyy-mm-dd', autoclose: true });
+
+        
+    });
+</script>

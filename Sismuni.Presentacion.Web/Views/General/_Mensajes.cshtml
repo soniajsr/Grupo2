@@ -1,0 +1,52 @@
+﻿@model Sismuni.Presentacion.Web.Models.General.IMensajeModelo
+@{
+
+    if (Model != null)
+    {
+        if (Model.ExisteMensaje)
+        {
+            if (!string.IsNullOrWhiteSpace(Model.Satisfactorio))
+            {
+                <div id="divMensaje" class="alert alert-success fade in">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <a class="icon-siga16-msg-ok"></a>
+                    <label id="a-success">@Model.Satisfactorio</label>
+
+                </div>
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(Model.Informativo))
+                {
+                    <div id="divMensaje" class="alert alert-info fade in">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <a class="icon-siga16-msg-info"></a>
+                        <label id="al-info">@Model.Informativo</label>
+                    </div>
+                }
+                else
+                {
+                    if (!string.IsNullOrWhiteSpace(Model.Advertencia))
+                    {
+                        <div id="divMensaje" class="alert alert-warning fade in">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <a class="icon-siga16-msg-advertencia"></a>
+                            <label id="al-warning">@Model.Advertencia</label>
+                        </div>
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrWhiteSpace(Model.Peligro))
+                        {
+                            <div id="divMensaje" class="alert alert-danger fade in">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <a class="icon-siga16-msg-peligro"></a>
+                                <label id="al-danger">@Model.Peligro</label>
+                            </div>
+                        }
+                    }
+                }
+            }
+        }
+    }}
+

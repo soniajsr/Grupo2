@@ -1,0 +1,9 @@
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Entidad\bin\Debug\Sismuni.Dominio.Entidad.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Entidad\bin\Debug\Sismuni.Dominio.Entidad.pdb
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Entidad\obj\Debug\Sismuni.Dominio.Entidad.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Entidad\obj\Debug\Sismuni.Dominio.Entidad.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Entidad\bin\Debug\Sismuni.Dominio.Entidad.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Entidad\bin\Debug\Sismuni.Dominio.Entidad.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Entidad\obj\Debug\Sismuni.Dominio.Entidad.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Entidad\obj\Debug\Sismuni.Dominio.Entidad.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Entidad\obj\Debug\Sismuni.Dominio.Entidad.csprojResolveAssemblyReference.cache

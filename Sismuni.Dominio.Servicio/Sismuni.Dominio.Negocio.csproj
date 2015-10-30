@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F93A254-61DB-4253-AA6B-C7A3A219EBEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sismuni.Dominio.Negocio</RootNamespace>
+    <AssemblyName>Sismuni.Dominio.Servicio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sismini.Transversal.Mapeo\Librerias\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enumeraciones\PrimerValorEnum.cs" />
+    <Compile Include="General\IMultitablaNegocio.cs" />
+    <Compile Include="General\MultitablaNegocio.cs" />
+    <Compile Include="Licencia\GestionSolicitudLicencia\ILISolicitudLicenciaNegocio.cs" />
+    <Compile Include="Licencia\GestionSolicitudLicencia\LISolicitudLicenciaNegocio.cs" />
+    <Compile Include="Mapeos\GeneralMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\GrupoTabla.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrupoTabla.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Transparencia\GestionSolicitud\GNTSolicitudNegocio.cs" />
+    <Compile Include="Transparencia\GestionSolicitud\IGNTSolicitudNegocio.cs" />
+    <Compile Include="Transparencia\GestionExpediente\GNTExpedienteNegocio.cs" />
+    <Compile Include="Transparencia\GestionExpediente\IGNTExpedienteNegocio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\GrupoTabla.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GrupoTabla.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sismini.Transversal.Mapeo\Sismuni.Transversal.Mapeo.csproj">
+      <Project>{17149b8c-e46e-4640-8727-5dd3870c170b}</Project>
+      <Name>Sismuni.Transversal.Mapeo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sismuni.Dominio.Entidad\Sismuni.Dominio.Entidad.csproj">
+      <Project>{b4240fa8-3d1c-4ab6-bb46-da7a34531d91}</Project>
+      <Name>Sismuni.Dominio.Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sismuni.Infraestructura.Data\Sismuni.Infraestructura.Data.csproj">
+      <Project>{b11e8029-9780-47cd-99ed-6e17b6adf48a}</Project>
+      <Name>Sismuni.Infraestructura.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

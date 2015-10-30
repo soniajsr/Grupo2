@@ -1,0 +1,6 @@
+D:\TFS\Muni.gob.SanIsidro\TP2\Sismini.Transversal.Mapeo\bin\Release\Sismini.Transversal.Mapeo.dll
+D:\TFS\Muni.gob.SanIsidro\TP2\Sismini.Transversal.Mapeo\bin\Release\Sismini.Transversal.Mapeo.pdb
+D:\TFS\Muni.gob.SanIsidro\TP2\Sismini.Transversal.Mapeo\bin\Release\AutoMapper.dll
+D:\TFS\Muni.gob.SanIsidro\TP2\Sismini.Transversal.Mapeo\obj\Release\Sismini.Transversal.Mapeo.dll
+D:\TFS\Muni.gob.SanIsidro\TP2\Sismini.Transversal.Mapeo\obj\Release\Sismini.Transversal.Mapeo.pdb
+D:\TFS\Muni.gob.SanIsidro\TP2\Sismini.Transversal.Mapeo\obj\Release\Sismini.Transversal.General.csprojResolveAssemblyReference.cache

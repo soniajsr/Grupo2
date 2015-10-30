@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UPC_MUNIModelStoreContainer" CdmEntityContainer="UPC_MUNIEntities">
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="UsuRegistro" ColumnName="UsuRegistro" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuModifica" ColumnName="UsuModifica" />
+          <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioTrabajador">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.UsuarioTrabajador">
+        <MappingFragment StoreEntitySet="UsuarioTrabajador">
+          <ScalarProperty Name="IdUsuarioTrabajador" ColumnName="IdUsuarioTrabajador" />
+          <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+          <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApePaterno" ColumnName="ApePaterno" />
+          <ScalarProperty Name="ApeMaterno" ColumnName="ApeMaterno" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="NroDocumento" ColumnName="NroDocumento" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="FechaCese" ColumnName="FechaCese" />
+          <ScalarProperty Name="UsuRegistro" ColumnName="UsuRegistro" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuModifica" ColumnName="UsuModifica" />
+          <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="IdArea" ColumnName="IdArea" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="UsuRegistro" ColumnName="UsuRegistro" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuModifica" ColumnName="UsuModifica" />
+          <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargo">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.Cargo">
+        <MappingFragment StoreEntitySet="Cargo">
+          <ScalarProperty Name="IdCargo" ColumnName="IdCargo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="UsuRegistro" ColumnName="UsuRegistro" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="UsuModifica" ColumnName="UsuModifica" />
+          <ScalarProperty Name="FechaModifica" ColumnName="FechaModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoTabla">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.GrupoTabla">
+        <MappingFragment StoreEntitySet="GrupoTabla">
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="NombreGrupo" ColumnName="NombreGrupo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Multitabla">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.Multitabla">
+        <MappingFragment StoreEntitySet="Multitabla">
+          <ScalarProperty Name="IdMultitabla" ColumnName="IdMultitabla" />
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="NombreValor" ColumnName="NombreValor" />
+          <ScalarProperty Name="DescripcionLarga" ColumnName="DescripcionLarga" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expediente">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.Expediente">
+        <MappingFragment StoreEntitySet="Expediente">
+          <ScalarProperty Name="NumeroExpediente" ColumnName="NumeroExpediente" />
+          <ScalarProperty Name="FechaExpediente" ColumnName="FechaExpediente" />
+          <ScalarProperty Name="NumeroSolicitud" ColumnName="NumeroSolicitud" />
+          <ScalarProperty Name="Tipo_Expediente" ColumnName="Tipo_Expediente" />
+          <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SolicitudInformacionMunicipal">
+      <EntityTypeMapping TypeName="UPC_MUNIModel.SolicitudInformacionMunicipal">
+        <MappingFragment StoreEntitySet="SolicitudInformacionMunicipal">
+          <ScalarProperty Name="NumeroSolicitud" ColumnName="NumeroSolicitud" />
+          <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+          <ScalarProperty Name="NombresSolicitante" ColumnName="NombresSolicitante" />
+          <ScalarProperty Name="ApellidoPaternoSolicitante" ColumnName="ApellidoPaternoSolicitante" />
+          <ScalarProperty Name="ApellidoMaternoSolicitante" ColumnName="ApellidoMaternoSolicitante" />
+          <ScalarProperty Name="TipoDocumento" ColumnName="TipoDocumento" />
+          <ScalarProperty Name="NumeroDocumento" ColumnName="NumeroDocumento" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Modo_Envio" ColumnName="Modo_Envio" />
+          <ScalarProperty Name="IdUsuarioTrabajador" ColumnName="IdUsuarioTrabajador" />
+          <ScalarProperty Name="Tipo_Informacion" ColumnName="Tipo_Informacion" />
+          <ScalarProperty Name="Motivo_Solicitud" ColumnName="Motivo_Solicitud" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

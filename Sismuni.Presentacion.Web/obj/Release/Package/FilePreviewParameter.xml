@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="upcmuni" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\TFS\\Muni\.gob\.SanIsidro\\TP2\\Sismuni\.Presentacion\.Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\TFS\\Muni\.gob\.SanIsidro\\TP2\\Sismuni\.Presentacion\.Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-Sismuni.Presentacion.Web-20150728012313.mdf;Initial Catalog=aspnet-Sismuni.Presentacion.Web-20150728012313;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\TFS\\Muni\.gob\.SanIsidro\\TP2\\Sismuni\.Presentacion\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="UPC_MUNIEntities-Web.config Connection String" description="" value="metadata=res://*/Modelo.ModeloMunicipalidad.csdl|res://*/Modelo.ModeloMunicipalidad.ssdl|res://*/Modelo.ModeloMunicipalidad.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=dv2ztcuexv.database.windows.net;initial catalog=UPC-MUNI;user id=sismuni;password=Sistemas2015$;application name=EntityFramework;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\TFS\\Muni\.gob\.SanIsidro\\TP2\\Sismuni\.Presentacion\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='UPC_MUNIEntities']/@connectionString" />
+  </parameter>
+</parameters>

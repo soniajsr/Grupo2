@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B11E8029-9780-47CD-99ED-6E17B6ADF48A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sismuni.Infraestructura.Data</RootNamespace>
+    <AssemblyName>Sismuni.Infraestructura.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Sismini.Transversal.Mapeo\Librerias\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\ExtensionConsultas.cs" />
+    <Compile Include="Base\IConsultaUnidadDeTrabajo.cs" />
+    <Compile Include="Base\ICriterio.cs" />
+    <Compile Include="Base\IExecuteSql.cs" />
+    <Compile Include="Base\IRepositorio.cs" />
+    <Compile Include="Base\IUnidadDeTrabajo.cs" />
+    <Compile Include="Base\Repositorio.cs" />
+    <Compile Include="Modelo\Area.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Cargo.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Area.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Cargo.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Ciudadano.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Documento.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Empleado.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Expediente_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Perfil.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Rol.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Tipo_Documento.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Tramite.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Ubigeo.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CO_Usuario.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Estado.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Expediente.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\GrupoTabla.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\LI_disponibilidadinspector.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\LI_informeinspeccion.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\LI_inspeccion.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\LI_solicitudlicencia.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ModeloMunicipalidad.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloMunicipalidad.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ModeloMunicipalidad.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ModeloMunicipalidad.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloMunicipalidad.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Multitabla.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\NO_Expediente_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\NO_InformacionMunicipal.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\NO_InformeMunicipal.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\NO_SolicitudInformacionArea.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\NO_SolicitudInformacionMunicipal.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\NO_TipoExpediente_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Categoria.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Figuracion.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Genericas.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Gerencia.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Jefatura.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Presupuesto.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Solicitud.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PR_Version.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Acta_Confirmacion_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Acta_reunion.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Asunto.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_DetalleExpediente_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_DetalleRequisito_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_DocumentoAdjunto_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_DocumentosRequerimientos_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_DocumentoValidado_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Estado_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_InformeInspeccion_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Informe_Gerencia_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Informe_Sectorista_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Iniciativa_Vecinal.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_NivelOrganizacion_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_OrganizacionSocial_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Participantes_Organizacion_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_ReporteObs_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Reporte_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Requerimiento.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_RequisitoOrganizacion_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Reunion.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Sector.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_SubSector.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_SubTipoOrganizacion_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_SubTipoRequisto_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_TipoOrganizacion_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Tipo_Reporte_Elim.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PV_Vecino.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\SolicitudInformacionMunicipal.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\TR_DetalleSolicitudTramite.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\TR_RequisitoTramite.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\TR_SolicitudTramite.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\TR_Tipo_Tramite.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\UsuarioTrabajador.cs">
+      <DependentUpon>ModeloMunicipalidad.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos\MensajesData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MensajesData.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repositorios\General\IMultitablaRepositorio.cs" />
+    <Compile Include="Repositorios\General\MultitablaRepositorio.cs" />
+    <Compile Include="Repositorios\Licencia\GestionDisponibilidadInspector\ILIDisponibilidadInspectorRepositorio.cs" />
+    <Compile Include="Repositorios\Licencia\GestionDisponibilidadInspector\LIDisponibilidadInspectorRepositorio.cs" />
+    <Compile Include="Repositorios\Licencia\GestionInspeccion\ILIInspeccionRepositorio.cs" />
+    <Compile Include="Repositorios\Licencia\GestionInspeccion\LIInspeccionRepositorio.cs" />
+    <Compile Include="Repositorios\Licencia\GestionSolicitudLicencia\ILISolicitudLicenciaRepositorio.cs" />
+    <Compile Include="Repositorios\Licencia\GestionSolicitudLicencia\LISolicitudLicenciaRepositorio.cs" />
+    <Compile Include="Repositorios\Transparencia\GestionExpediente\GNTExpedienteRepositorio.cs" />
+    <Compile Include="Repositorios\Transparencia\GestionExpediente\IGNTExpedienteRepositorio.cs" />
+    <Compile Include="Repositorios\Transparencia\GestionSolicitud\GNTSolicitudRepositorio.cs" />
+    <Compile Include="Repositorios\Transparencia\GestionSolicitud\IGNTSolicitudRepositorio.cs" />
+    <Compile Include="UnidadDeTrabajo\IModeloUnidadDeTrabajo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IModeloUnidadDeTrabajo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UnidadDeTrabajo\ModeloUnidadDeTrabajo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Modelo\ModeloMunicipalidad.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloMunicipalidad.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\ModeloMunicipalidad.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloMunicipalidad.edmx</DependentUpon>
+      <LastGenOutput>ModeloMunicipalidad.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Modelo\ModeloMunicipalidad.edmx.diagram">
+      <DependentUpon>ModeloMunicipalidad.edmx</DependentUpon>
+    </None>
+    <None Include="Modelo\ModeloMunicipalidad.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloMunicipalidad.edmx</DependentUpon>
+      <LastGenOutput>ModeloMunicipalidad.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="UnidadDeTrabajo\IModeloUnidadDeTrabajo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IModeloUnidadDeTrabajo.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sismini.Transversal.Mapeo\Sismuni.Transversal.Mapeo.csproj">
+      <Project>{17149b8c-e46e-4640-8727-5dd3870c170b}</Project>
+      <Name>Sismuni.Transversal.Mapeo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sismuni.Dominio.Entidad\Sismuni.Dominio.Entidad.csproj">
+      <Project>{b4240fa8-3d1c-4ab6-bb46-da7a34531d91}</Project>
+      <Name>Sismuni.Dominio.Entidad</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\MensajesData.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MensajesData.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

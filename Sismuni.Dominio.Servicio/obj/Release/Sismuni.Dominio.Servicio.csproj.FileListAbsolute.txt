@@ -1,0 +1,4 @@
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\bin\Release\Sismuni.Dominio.Servicio.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\bin\Release\Sismuni.Dominio.Servicio.pdb
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\obj\Release\Sismuni.Dominio.Servicio.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Dominio.Servicio\obj\Release\Sismuni.Dominio.Servicio.pdb

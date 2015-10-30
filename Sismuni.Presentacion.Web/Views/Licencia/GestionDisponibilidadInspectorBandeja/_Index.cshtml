@@ -1,0 +1,85 @@
+﻿@using Sismuni.Presentacion.Web.Resources;
+@using Sismuni.Presentacion.Web.Helpers.Html
+@using System.ComponentModel;
+@using Sismuni.Presentacion.Web.Helpers;
+@using Sismini.Transversal.Mapeo.Recursos;
+<link href="~/Resources/Template/css/datepicker/datepicker3.css" rel="stylesheet" />
+<script src="~/Resources/Template/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="~/Resources/Template/js/plugins/datepicker/locales/bootstrap-datepicker.es.js"></script>
+
+<link href="~/Resources/Template/css/NewTransparencia.css" rel="stylesheet" />
+
+
+@model Sismuni.Presentacion.Web.Models.Licencia.GestionDisponibilidadInspector.DisponibilidadInspectorPaginadoModelo
+@{
+    ViewBag.TituloMenu = "Asignar Inspector";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+
+@using (Html.BeginSecureForm("Buscar", "GestionDisponibilidadInspectorBandeja", FormMethod.Get, new { @class = "form-horizontal", role = "form", id = "formDisponibilidadInspector" }))
+{
+
+    <!--<div class="contitlebaTitle"><span id="titlebar" class="titlebarTitle">Gestión de Expediente Técnico</span></div>-->
+
+    //Mensajes
+    @Html.Partial("_Mensajes", Model)
+    
+    Html.HiddenFor(x => x.Filtro.DisponibilidadInspector.NumeroSolicitud);
+    Html.HiddenFor(x => x.Filtro.DisponibilidadInspector.EstadoSolicitud);
+    
+    <div class="sigen-right sigen-point">
+        <a title="Regresar" class="glyphicon glyphicon-circle-arrow-left" href="@Url.Action("Buscar", "GestionSolicitudLicenciaBandeja", new { back = true })"></a> <a title="Regresar" href="@Url.Action("Buscar", "GestionSolicitudLicenciaBandeja", new { back = true })"></a>
+    </div>
+
+   if (Model.Filtro.DisponibilidadInspector.EstadoSolicitud == EstadosValor.SolicitudLicenciaPendiente) {
+
+    <div class="form-group">
+
+
+            <div class="sigen-group">
+                @Html.LabelFor(m => m.Filtro.DisponibilidadInspector.Rango_Hora, "Horario ", new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.DropDownListFor(m => m.Filtro.DisponibilidadInspector.Rango_Hora, Model.Filtro.RangoHorario, new { @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="sigen-group">
+
+                @Html.Label("Fecha: ", new { @class = "col-sm-2 control-label" })
+
+                <div class="col-sm-4">
+                    @Html.TextBox("Filtro.DisponibilidadInspector.Fecha",
+                                    Model.Filtro.DisponibilidadInspector.Fecha == null ? string.Empty : Model.Filtro.DisponibilidadInspector.Fecha.Value.ToString(Formatos.FechaCorta),
+                                    new { @class = "form-control sigen-fecha-corta", @placeholder = "Fecha" })
+                </div>
+            </div>
+
+        </div>
+
+    <div class="form-group">
+        <div class="col-sm-12 text-center">
+            <button type="submit" class="myButton">@Botones.btnBuscar</button>
+        </div>
+    </div>
+
+    }
+
+
+    //Resultado paginado
+    <div class="table-responsive">
+        @Html.Partial("_Grid")
+    </div>
+}
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+
+
+        $('#Filtro_DisponibilidadInspector_Fecha').datepicker({ language: 'es', format: 'yyyy-mm-dd', autoclose: true });
+        
+
+    });
+</script>
+

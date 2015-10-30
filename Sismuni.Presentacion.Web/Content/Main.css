@@ -1,0 +1,382 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic&v2);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&v2);
+
+* {
+    font-family: 'Open Sans', Verdana, Helvetica;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-size: 9pt;
+    cursor: default;
+    overflow: auto;
+    border: none;
+    margin: 0;
+}
+
+.titleGral {
+    float: right;
+    margin: 8px 8px 8px;
+    overflow: hidden;
+}
+
+    .titleGral .title {
+        color: #314d2c;
+        font-size: 150%;
+        font-weight: 700;
+        font-family: 'Ubuntu';
+    }
+
+.titlebarTitle {
+    font-size: 14pt;
+    font-weight: 700;
+    font-family: 'Ubuntu';
+    color: #002E6C;
+    margin-bottom:4px;
+}
+
+#contenido {
+    float: left;
+    width: 701px;
+    padding: 5px;
+}
+
+#header {
+    background: url(../Images/MSI/bar-nav.jpg) top right no-repeat #00774a;
+    height: 57px;
+    position: relative;
+    width: 100%;
+}
+
+    #header #logo {
+        position: absolute;
+        top: 24px;
+        z-index: 21;
+    }
+
+body.home #header #logo {
+    left: 32px;
+}
+
+#header #logo img.page {
+    width: 352px;
+}
+
+#menu {
+    /*background-color: #00774A;*/
+    float: left;
+    width: 270px;
+    padding: 5px 5px;
+}
+
+#wrapper {
+    background-color: #f5f5f5;
+    background-size: contain;
+    border-left: solid 1px silver;
+    border-right: solid 1px silver;
+    min-height: 100%;
+    overflow: hidden;
+    width: 973px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #CCC;
+}
+
+#borderHeader {
+    background: #7fbb0c;
+    height: 1px;
+    left: 0px;
+    right: 0px;
+}
+
+ul.form > li {
+    margin-bottom: 5px;
+}
+
+    ul.form > li > div input[type=text] {
+        padding: 1px 0;
+    }
+
+    ul.form > li > label {
+        color: #333;
+        padding: 3px;
+        display: block;
+        border-bottom: solid 1px #ccc;
+        font-weight: bold;
+        font-size: 8pt;
+        margin-right: 5px;
+        font-size: 12px;
+    }
+
+    ul.form > li > div {
+        margin-right: 5px;
+        margin-top: 3px;
+    }
+
+.form {
+    clear: both;
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+}
+
+.columna, .columna33, .columna25, .columna20 {
+    float: left;
+}
+
+.columna {
+    width: 50%;
+}
+
+.columna33 {
+    width: 33%;
+}
+
+.columna25 {
+    width: 25%;
+}
+
+.columna20 {
+    width: 20%;
+}
+
+/* == TABLAS == */
+
+.grid {
+    border: solid 1px;
+    border-collapse: collapse;
+    margin: 0;
+    border-color: #81a437;
+}
+
+.gridColumn, .gridColumnEdit {
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+.gridColumn {
+    border-right-color: #81a437;
+    border-top-color: #81a437;
+}
+
+.gridColumnEdit {
+    text-align: center;
+    color: #000;
+    border-right-color: #81a437;
+    border-top-color: #81a437;
+}
+
+.gridColumnBB {
+    border-bottom: solid 1px;
+}
+
+.gridColumnBBR {
+    border-bottom: solid 1px;
+    border-right: solid 1px;
+    border-right-color: #81a437;
+    border-bottom-color: #81a437;
+}
+
+.gridColumnBL {
+    border-left: solid 1px;
+    border-left-color: #81a437;
+}
+
+.gridColumnBR {
+    border-right: solid 1px;
+    border-right-color: #81a437;
+}
+
+.gridColumnBTL {
+    border-left: solid 1px;
+    border-top: solid 1px;
+    border-left-color: #81a437;
+    border-top-color: #81a437;
+}
+
+.gridHeader {
+    font-size: 8pt;
+    font-variant: normal;
+    font-weight: 700;
+    height: 18px;
+    text-align: center;
+    background-color: #81a437;
+    color: #111;
+    border-color: #81a437;
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 51%, rgba(246,246,246,0.5) 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.75)), color-stop(50%,rgba(255,255,255,0.5)), color-stop(51%,rgba(255,255,255,0)), color-stop(100%,rgba(246,246,246,0.5)));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 51%,rgba(246,246,246,0.5) 100%);
+    background-image: -o-linear-gradient(top, rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 51%,rgba(246,246,246,0.5) 100%);
+    background-image: -ms-linear-gradient(top, rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 51%,rgba(246,246,246,0.5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00f6f6f6',GradientType=0 );
+    background-image: linear-gradient(top, rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 51%,rgba(246,246,246,0.5) 100%);
+}
+
+    .gridHeader a {
+        color: #111;
+    }
+
+tr:nth-child(odd) {
+    background-color: #F5F5F5;
+    color: #000;
+}
+
+tr:nth-child(even) {
+    background-color: #EBF1FA;
+    color: #000;
+}
+
+/* == CONTENIDO == */
+.box {
+    background: #fff;
+    padding: 2px 2px;
+    /*margin: 0px 0px 12px 0px;*/
+    position: relative;
+}
+
+    .box .title {
+        /*color: #3f3f3f;*/
+        font-size: 120%;
+        color: #808486;
+        padding-top: 4px;
+    }
+
+        .box .title a,
+        .box .title a:hover {
+            color: #808486;
+            text-decoration: none;
+        }
+
+        .box .title.cyan,
+        .box .title.cyan a {
+            color: #34aad6;
+        }
+
+    .box span {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+    }
+
+    .box li {
+        background: url(../Images/MSI/li-interna.jpg) no-repeat 0px 2px;
+        color: #7d7c7c;
+        font: 12px;
+        padding: 0px 0px 0px 10px;
+    }
+
+    .box .firstMenuItem {
+        color: #34aad6;
+        font-weight: bold;
+    }
+
+    .box ul {
+        list-style-type: none;
+        padding: 0 0 0 12px;
+    }
+
+        .box ul li,
+        .box ul li a {
+            color: #34aad6;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            .box ul li a:hover {
+                text-decoration: underline;
+            }
+
+        .box ul ul {
+            padding: 0 0 0 3px;
+            margin: 5px 0 25px 0;
+        }
+
+    .box li li {
+        background: url(../Images/MSI/li-ul-li-interna.jpg) no-repeat 0px 2px;
+        margin: 0 0 5px 0;
+        padding: 0 0 0 10px;
+        color: #7d7d7c;
+        font-weight: normal;
+    }
+
+        .box li li a {
+            color: #7d7d7c;
+            font-weight: normal;
+        }
+
+            .box li li a:hover {
+                text-decoration: underline;
+            }
+
+    .box ul ul ul {
+        padding: 0 0 0 16px;
+    }
+
+    .box li li li {
+        list-style-type: square;
+        background: none;
+        padding: 0 0 0 2px;
+    }
+
+    .box p {
+        color: #7d7c7c;
+        font: 12px;
+    }
+
+/* Botones */
+.myButton {
+    -moz-box-shadow: inset 0px 1px 0px 0px #9acc85;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #9acc85;
+    box-shadow: inset 0px 1px 0px 0px #9acc85;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #74ad5a), color-stop(1, #68a54b));
+    background: -moz-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+    background: -webkit-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+    background: -o-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+    background: -ms-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
+    background: linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#74ad5a', endColorstr='#68a54b',GradientType=0);
+    background-color: #74ad5a;
+    border: 1px solid #3b6e22;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+
+    .myButton:hover {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #68a54b), color-stop(1, #74ad5a));
+        background: -moz-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
+        background: -webkit-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
+        background: -o-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
+        background: -ms-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
+        background: linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#68a54b', endColorstr='#74ad5a',GradientType=0);
+        background-color: #68a54b;
+    }
+
+    .myButton:active {
+        position: relative;
+        top: 1px;
+    }
+
+/* Textbox */
+input[type="text"] {
+    padding: 5px;
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+    input[type="text"]:focus,
+    input[type="text"].focus {
+        border: solid 1px #707070;
+        box-shadow: 0 0 5px 1px #969696;
+    }

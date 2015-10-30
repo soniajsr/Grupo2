@@ -1,0 +1,14 @@
+﻿
+@using Sismuni.Presentacion.Web.Resources
+
+
+@model System.Web.Mvc.HandleErrorInfo
+@{
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+<div style="color: red">
+    <a onclick="history.go(-1); return false;" class="glyphicon glyphicon-circle-arrow-left siga-point" title="Regresar"></a>
+    <h2>@Mensajes.MsjeErrorSistema</h2>
+    @Html.Raw(@ViewBag.Exception);
+</div>
+

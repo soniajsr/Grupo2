@@ -1,0 +1,52 @@
+﻿@using Sismuni.Presentacion.Web.Resources
+@using Sismuni.Presentacion.Web.Helpers.Html
+
+@model Sismuni.Presentacion.Web.Models.Transparencia.GestionExpediente.ExpedientePaginadoModelo
+@{
+    var grid = new WebGrid
+    (
+        rowsPerPage: Model.Grid.TamanioPagina,
+        canSort: Model.Grid.TotalPagina > 0,
+        ajaxUpdateContainerId: "grid-det"
+    );
+    grid.Bind(Model.Grid.ElementosPagina, autoSortAndPage: false, rowCount: Model.Grid.TotalPagina);
+}
+
+    <div class="sigen-right sigen-point newlink">
+            <a class="newFrm" title="Nuevo" href="@Url.Action("Editor", "GestionExpediente")">Nuevo</a> <a title="Nuevo"  class="glyphicon glyphicon-plus-sign" href="@Url.Action("Editor", "GestionExpediente")"></a>
+    </div>
+    
+
+    @grid.Table(
+                  fillEmptyRows: false,
+                  headerStyle: "sigen-head min-w",
+                  tableStyle: "table table-striped table-bordered table-condensed sigen-table-grid",
+                  columns: new[]
+                  {
+                          //grid.Column("IDENCUESTA", "Id", style:"sigen-column-left"),
+                          grid.Column("NumeroExpediente", "Nro. Expediente", style:"sigen-column-left" ),
+                          grid.Column("NumeroSolicitud", "Nro. Solicitud", style:"sigen-column-left" ),
+                          grid.Column("FechaExpediente", 
+                                        header: "Fecha Expediente",
+                                        format: p=>p.FechaExpediente == null ? string.Empty : p.FechaExpediente.ToString(Formatos.FechaCorta)),
+                          grid.Column("Nombres_Solicitante", "Nombres y Apellidos", style:"sigen-column-left" ),              
+                          grid.Column("Tipo_Expediente", "Tipo Expediente", style:"sigen-column-left"),
+                          grid.Column("Asunto", "Asunto", style:"sigen-column-left"),
+                          grid.Column("", "Opciones",
+                          @<text>
+                         @Html.ActionLink(" ", "Editor", "GestionExpediente", new { id = item.NumeroExpediente }, new { @title = "Modificar", @class = "sigen-width-20 glyphicon glyphicon-pencil" })
+                         
+                          </text>
+                            )
+                        
+
+                  })
+    <div class="text-center" id="grid-det-foot">
+        @grid.PagerList(mode: WebGridPagerModes.All)
+    </div>
+
+
+   
+   
+
+

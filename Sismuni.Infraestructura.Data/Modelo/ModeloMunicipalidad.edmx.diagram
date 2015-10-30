@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="687a70d6ef574231b1f1266e8329cc1d" Name="Diagrama1">
+        <EntityTypeShape EntityType="UPC_MUNIModel.Estado" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.UsuarioTrabajador" Width="1.5" PointX="8" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.Area" Width="1.5" PointX="5.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.Cargo" Width="1.5" PointX="5.75" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.GrupoTabla" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.Multitabla" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.Expediente" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.SolicitudInformacionMunicipal" Width="1.5" PointX="10.25" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__UsuarioTr__IdEst__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__Solicitud__IdUsu__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__UsuarioTr__IdAre__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__UsuarioTr__IdCar__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__Multitabl__IdGru__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__Expedient__Tipo___30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__Solicitud__Estad__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__Solicitud__TipoD__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__Expedient__Numer__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__Solicitud__Tipo___66603565" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Area" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Cargo" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Ciudadano" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Documento" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Empleado" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Expediente_Elim" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Perfil" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Rol" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Tipo_Documento" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Tramite" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Ubigeo" Width="1.5" PointX="5.75" PointY="13.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.CO_Usuario" Width="1.5" PointX="7.75" PointY="13.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.LI_disponibilidadinspector" Width="1.5" PointX="12.75" PointY="14.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.LI_informeinspeccion" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.LI_solicitudlicencia" Width="1.5" PointX="16.75" PointY="14.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.NO_Expediente_Elim" Width="1.5" PointX="18" PointY="5" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.NO_InformacionMunicipal" Width="1.5" PointX="15" PointY="3.125" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.NO_InformeMunicipal" Width="1.5" PointX="15" PointY="10.5" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.NO_SolicitudInformacionArea" Width="1.5" PointX="20.25" PointY="5.125" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.NO_SolicitudInformacionMunicipal" Width="1.5" PointX="12.75" PointY="4.25" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.NO_TipoExpediente_Elim" Width="1.5" PointX="15.75" PointY="7.625" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Categoria" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Figuracion" Width="1.5" PointX="17.75" PointY="8.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Genericas" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Gerencia" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Jefatura" Width="1.5" PointX="17.75" PointY="11.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Presupuesto" Width="1.5" PointX="12.75" PointY="17.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Solicitud" Width="1.5" PointX="14.75" PointY="17.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PR_Version" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Acta_Confirmacion_Elim" Width="1.5" PointX="16.75" PointY="17.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Acta_reunion" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Asunto" Width="1.5" PointX="2.75" PointY="18.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_DetalleExpediente_Elim" Width="1.5" PointX="9.75" PointY="18.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_DetalleRequisito_Elim" Width="1.5" PointX="18.75" PointY="14.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_DocumentoAdjunto_Elim" Width="1.5" PointX="18.75" PointY="17.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_DocumentosRequerimientos_Elim" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_DocumentoValidado_Elim" Width="1.5" PointX="19.75" PointY="8.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Estado_Elim" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Informe_Gerencia_Elim" Width="1.5" PointX="19.75" PointY="11.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Informe_Sectorista_Elim" Width="1.5" PointX="20.75" PointY="14.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_InformeInspeccion_Elim" Width="1.5" PointX="16.75" PointY="20.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Iniciativa_Vecinal" Width="1.5" PointX="20.75" PointY="17.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_NivelOrganizacion_Elim" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_OrganizacionSocial_Elim" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Participantes_Organizacion_Elim" Width="1.5" PointX="2.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Reporte_Elim" Width="1.5" PointX="7.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_ReporteObs_Elim" Width="1.5" PointX="21.75" PointY="8.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Requerimiento" Width="1.5" PointX="9.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_RequisitoOrganizacion_Elim" Width="1.5" PointX="21.75" PointY="11.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Reunion" Width="1.5" PointX="11.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Sector" Width="1.5" PointX="13.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_SubSector" Width="1.5" PointX="18.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_SubTipoOrganizacion_Elim" Width="1.5" PointX="20.75" PointY="21.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_SubTipoRequisto_Elim" Width="1.5" PointX="22.75" PointY="3.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Tipo_Reporte_Elim" Width="1.5" PointX="4.75" PointY="22.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_TipoOrganizacion_Elim" Width="1.5" PointX="22.75" PointY="14.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.PV_Vecino" Width="1.5" PointX="22.75" PointY="17.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.TR_DetalleSolicitudTramite" Width="1.5" PointX="22.75" PointY="20.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.TR_RequisitoTramite" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.TR_SolicitudTramite" Width="1.5" PointX="23.75" PointY="6.75" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.TR_Tipo_Tramite" Width="1.5" PointX="23.75" PointY="10.75" />
+        <AssociationConnector Association="UPC_MUNIModel.FK_tbExpediente_tbSolicitudInformacionMunicipal" />
+        <AssociationConnector Association="UPC_MUNIModel.FK_tbExpediente_tbTipoExpediente" />
+        <AssociationConnector Association="UPC_MUNIModel.FK_tbSolicitudInformacionArea_tbExpediente" />
+        <AssociationConnector Association="UPC_MUNIModel.FK_tbInformacionMunicipal_tbSolicitudInformacionMunicipal" />
+        <AssociationConnector Association="UPC_MUNIModel.FK_tbInformeMunicipal_tbSolicitudInformacionMunicipal" />
+        <EntityTypeShape EntityType="UPC_MUNIModel.LI_inspeccion" Width="1.5" PointX="15" PointY="24.5" />
+        <AssociationConnector Association="UPC_MUNIModel.FK__LI_inspec__iddis__52E34C9D" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,16 @@
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Dominio.Servicio.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Dominio.Servicio.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\AutoMapper.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismini.Transversal.Mapeo.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Dominio.Entidad.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Infraestructura.Data.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\EntityFramework.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismini.Transversal.Mapeo.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Dominio.Entidad.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\Sismuni.Infraestructura.Data.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\bin\Debug\EntityFramework.xml
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Negocio.csprojResolveAssemblyReference.cache
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Negocio.Recursos.GrupoTabla.resources
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Negocio.csproj.GenerateResource.Cache
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Servicio.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Dominio.Servicio\obj\Debug\Sismuni.Dominio.Servicio.pdb

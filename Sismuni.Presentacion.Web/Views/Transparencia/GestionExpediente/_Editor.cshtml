@@ -1,0 +1,75 @@
+﻿@using Sismuni.Presentacion.Web.Resources
+@using Sismuni.Presentacion.Web.Helpers.Html
+@using System.ComponentModel
+
+
+<link href="~/Resources/Template/css/NewTransparencia.css" rel="stylesheet" />
+@model Sismuni.Presentacion.Web.Models.Transparencia.GestionExpediente.ExpedienteEditorModelo
+@{
+    Layout = "~/Views/Shared/_Master.cshtml";
+    ViewBag.TituloMenu = "@";
+}
+
+@using (Html.BeginSecureForm("Registrar", "GestionExpediente", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "ExpedienteForm" }))
+{
+
+    <!--<div><span id="titlebar" class="titlebarTitle">Gestión de Expediente Técnico</span></div>-->
+
+    //Campos ocultos
+    @Html.HiddenFor(m => m.Expediente.NumeroExpediente)
+
+    //Mensajes
+    @Html.Partial("_Mensajes", Model)
+
+    <div class="col-sm-14">
+        <div class="col-sm-12">
+                
+                <div class="sigen-right sigen-point">
+                    <a title="Regresar" class="glyphicon glyphicon-circle-arrow-left" href="@Url.Action("Buscar", "GestionExpedienteBandeja", new { back = true })"></a> <a title="Regresar" href="@Url.Action("Buscar", "GestionExpedienteBandeja", new { back = true })"></a>
+                </div>
+
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.LabelFor(m => m.Expediente.Tipo_Expediente, "Tipo Expediente:(*) ", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(m => m.Expediente.Tipo_Expediente, Model.TipoExpediente, new { @class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <div class="sigen-group">
+                        @Html.LabelFor(m => m.Expediente.Asunto, "Asunto: (*)", new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-8">
+                            @Html.TextAreaFor(m => m.Expediente.Asunto, new { @class = "form-control", @placeholder = "Asunto", @maxlength = "200", @rows = 8 , @cols = 50 })
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+
+                </div>
+
+         
+            <br />
+
+            
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12 text-center">
+                <div class="infoReq">(*) Datos requeridos</div>
+
+                <button class="myButton" id="btn-Grabar">@Botones.btnGrabar</button>
+            </div>
+        </div>
+    </div>
+                
+ }
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        expedientejs.iniciar();
+
+    });
+</script>

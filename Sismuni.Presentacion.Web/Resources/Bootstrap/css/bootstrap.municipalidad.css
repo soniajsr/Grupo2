@@ -1,0 +1,224 @@
+/*Para los encabezados*/
+H1 {
+    color: #ED1B2E;
+}
+
+H2 {
+    color: #ED1B2E;/*#A70F40;*/
+}
+
+H3 {
+    color: #ED1B2E;/*#A70F40;*/
+}
+
+.h5 {
+    color: #ED1B2E;/*#A70F40;*/
+    font-weight: bold;
+}
+
+strong {
+    color: #ED1B2E;/*#459596;*/
+}
+
+
+
+/*Para los botones*/
+
+.btn-primary {
+    color: #fff;
+    background-color: #db3645;/*#12A59F;*/
+    border-color: #db3645;/*#109992;*/
+}
+
+    .btn-primary:hover {
+        background-color: #ED1B2E;/*#0D7A73;*/
+        border-color: #ED1B2E;/*#0B6B64;*/
+    }
+
+    .btn-primary:focus {
+        background-color: #ED1B2E;/*#0D7A73;*/
+        border-color: #ED1B2E;/*#0B6B64;*/
+    }
+/*Para el borde de los controles de formularios que tienen foco*/
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+.form-control:focus {
+    border-color: rgba(88, 90, 92, 0.8);/*rgba(80, 165, 159, 0.8);*/
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(88, 90, 92, 0.8);/*rgba(80, 165, 159, 0.6);*/
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(88, 90, 92, 0.8);/*rgba(80, 165, 159, 0.6);*/
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(88, 90, 92, 0.8);/*rgba(80, 165, 159, 0.6);*/
+}
+
+/*Enlaces*/
+a {
+    color: #ED1B2E;/*#12A59F;*/
+}
+
+    a:hover, a:focus {
+        color: #ED1B2E;/*#0D7A73;*/
+    }
+
+/*Navbar*/
+
+.navbar-default {
+    background-color: #ED1B2E;/*#2f3336;*/
+    border-color: #ED1B2E;/*#ED1B2E;*/        
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+    .navbar-default .navbar-brand {
+        color: #ecf0f1;
+    }
+
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+            color: #ffffff;
+        }
+
+    .navbar-default .navbar-nav > li > a {
+        color: #ecf0f1;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
+            color: #ffffff;
+        }
+
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #ffffff;
+        background-color: #ED1B2E;/*#098482;*/
+    }
+
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #ffffff;
+        background-color: #ED1B2E;/*#098482;*/
+    }
+
+    .navbar-default .navbar-nav > .dropdown > a .caret {
+        border-top-color: #ecf0f1;
+        border-bottom-color: #ecf0f1;
+    }
+
+    .navbar-default .navbar-nav > .dropdown > a:hover .caret,
+    .navbar-default .navbar-nav > .dropdown > a:focus .caret {
+        border-top-color: #ffffff;
+        border-bottom-color: #ffffff;
+    }
+
+    .navbar-default .navbar-nav > .open > a .caret,
+    .navbar-default .navbar-nav > .open > a:hover .caret,
+    .navbar-default .navbar-nav > .open > a:focus .caret {
+        border-top-color: #ffffff;
+        border-bottom-color: #ffffff;
+    }
+
+    .navbar-default .navbar-toggle {
+        border-color: #FFF;/*#098482;*/
+    }
+
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+            background-color: #FFF;/*#098482;*/
+        }
+
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #ecf0f1;
+        }        
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ecf0f1;
+    }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #ffffff;
+        }
+}
+
+/*Logotipo del NavBar*/
+.navbar-brand {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/**/
+.input-sx-esp {
+    padding: 1px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-bottom: 0px;
+    height: 22px;
+}
+/**/
+
+.sigen-table-grid-size {
+    font-size: 11px;
+}
+
+.navbar-collapse{
+    background-color: #ED1B2E;/*#2f3336;*/
+    border-color: #ED1B2E;/*#ED1B2E;*/    
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.btn-primary[disabled],fieldset[disabled] .btn-primary,.btn-primary.disabled:hover,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary:hover,.btn-primary.disabled:focus,.btn-primary[disabled]:focus,fieldset[disabled] .btn-primary:focus,.btn-primary.disabled:active,.btn-primary[disabled]:active,fieldset[disabled] .btn-primary:active,.btn-primary.disabled.active,.btn-primary[disabled].active,fieldset[disabled] .btn-primary.active{
+    /*background-color:#428bca;
+    border-color:#357ebd;*/
+    background-color: #db3645;/*#12A59F;*/
+    border-color: #db3645;/*#109992;*/
+}
+
+ .panel-heading{
+     /*padding:10px 15px;*/
+     border-bottom:1px solid transparent;
+     border-top-right-radius:3px;
+     border-top-left-radius:3px
+ }
+
+ .panel-group 
+ .panel{margin-bottom:0;overflow:hidden;border-radius:4px}
+ 
+ .panel-group 
+ .panel+.panel{margin-top:5px}
+ 
+ .panel-group 
+ .panel-heading{border-bottom:0}
+ 
+ .panel-group 
+ .panel-heading+
+ .panel-collapse 
+ .panel-body {border-top:1px solid #ddd}
+ 
+ .panel-group .panel-footer{border-top:0}
+
+ .nav > li > a:hover, .nav > li > a:focus{
+        color: #fff;
+        text-decoration:none;
+        background-color:#ED1B2E
+    }

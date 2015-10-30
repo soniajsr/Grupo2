@@ -1,0 +1,85 @@
+﻿@using Sismuni.Presentacion.Web.Resources;
+@using Sismuni.Presentacion.Web.Helpers.Html
+@using System.ComponentModel;
+@using Sismuni.Presentacion.Web.Helpers;
+<link href="~/Resources/Template/css/datepicker/datepicker3.css" rel="stylesheet" />
+<script src="~/Resources/Template/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="~/Resources/Template/js/plugins/datepicker/locales/bootstrap-datepicker.es.js"></script>
+
+<link href="~/Resources/Template/css/NewTransparencia.css" rel="stylesheet" />
+
+
+@model Sismuni.Presentacion.Web.Models.Licencia.GestionSolicitudLicencia.SolicitudLicenciaPaginadoModelo
+@{
+    ViewBag.TituloMenu = "Programar Inspeccion";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+
+@using (Html.BeginSecureForm("Buscar", "GestionSolicitudLicenciaBandeja", FormMethod.Get, new { @class = "form-horizontal", role = "form", id = "formSolicitudLicencia" }))
+{
+
+    <!--<div class="contitlebaTitle"><span id="titlebar" class="titlebarTitle">Gestión de Expediente Técnico</span></div>-->
+
+    //Mensajes
+    @Html.Partial("_Mensajes", Model)
+
+      
+        
+        <div class="form-group">
+            @Html.Label("Nro Tramite: ", new { @class = "col-sm-2 control-label labelfrm90" })
+            <div class="col-sm-4">
+                @Html.TextBoxFor(m => m.Filtro.SolicitudLicencia.numero, new { @class = "form-control" })
+            </div>
+
+            @Html.Label("Fecha Solicitud: ", new { @class = "col-sm-2 control-label labelfrm50" })
+            <div class="col-sm-4">
+                @Html.TextBox("Filtro.SolicitudLicencia.FechaSolicitud",
+                         Model.Filtro.SolicitudLicencia.FechaSolicitud == null ? string.Empty : Model.Filtro.SolicitudLicencia.FechaSolicitud.Value.ToString(Formatos.FechaCorta),
+                                new { @class = "form-control sigen-fecha-corta", @placeholder = "Fecha Solicitud" })
+            </div>
+
+        </div>
+            <div class="form-group">
+            
+            @Html.Label("Nombre Solicitante: ", new { @class = "col-sm-2 control-label labelfrm90" })
+            <div class="col-sm-4">
+                @Html.TextBoxFor(m => m.Filtro.SolicitudLicencia.NombresSolicitante, new { @class = "form-control" })
+            </div>
+
+
+            @Html.Label("Fecha Inspeccion: ", new { @class = "col-sm-2 control-label labelfrm50" })
+
+            <div class="col-sm-4">
+                @Html.TextBox("Filtro.SolicitudLicencia.FechaInspeccion",
+                                Model.Filtro.SolicitudLicencia.FechaInspeccion == null ? string.Empty : Model.Filtro.SolicitudLicencia.FechaInspeccion.Value.ToString(Formatos.FechaCorta),
+                                new { @class = "form-control sigen-fecha-corta", @placeholder = "Fecha Inspeccion" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12 text-center">
+                <button type="submit" class="myButton" >@Botones.btnBuscar</button>
+                <button type="button" class="myButton" onclick="location.href='@Url.Action("Index", "GestionSolicitudLicenciaBandeja")'">@Botones.btnLimpiar</button>
+            </div>
+        </div>
+
+
+   
+
+    //Resultado paginado
+    <div class="table-responsive">
+        @Html.Partial("_Grid")
+    </div>
+}
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+
+
+        $('#Filtro_SolicitudLicencia_FechaSolicitud').datepicker({ language: 'es', format: 'yyyy-mm-dd', autoclose: true });
+        $('#Filtro_SolicitudLicencia_FechaInspeccion').datepicker({ language: 'es', format: 'yyyy-mm-dd', autoclose: true });
+
+
+    });
+</script>

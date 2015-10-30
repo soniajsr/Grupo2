@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Municipalidad de San Isidro - Sistema de Gestión Municipal</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/css/bootstrap")
+    @*@Styles.Render("~/css/sitio")*@
+    @Styles.Render("~/css/vistas")
+    @Scripts.Render("~/js/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/jqueryui")*@
+    @*@Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/js/boostrap")*@
+</head>
+<body>
+    @Html.Hidden("urlBase", Url.Content("~/"))
+    <section id="wrapper">
+        <section id="header" class="clearfix">
+            <article id="logo">
+                <a href="http://www.msi.gob.pe/portal" target="_blank">
+                    <img src="~/Images/MSI/logo.jpg">
+                </a>
+            </article>
+        </section>
+        <header>
+            <div class="titleGral">
+                <span class="title">Sistema de Gestión Municipal</span>
+            </div>
+            <div id="borderHeader" style="clear:both"></div>
+        </header>
+        <section id="menu">
+            <div class="box">
+                <div class="title cyan">Maestros</div>
+                <ul>
+                    <li>
+                        <a href="#">Usuarios</a>
+                    </li>
+                    <li>
+                        <a href="#">Estados</a>
+                    </li>
+                </ul>
+                <div class="title cyan">Licencia</div>
+                <ul>
+                    <li>
+                        <a href='@Url.Action("Index", "GestionSolicitudLicenciaBandeja")'>Programar Inspecciones</a>
+                    </li>                    
+                </ul>
+                <div class="title cyan">Normativa y Transparencia</div>
+                <ul>
+                    <li>
+                        <a href='@Url.Action("Index", "GestionExpedienteBandeja")'>Gestion de Expedientes Técnicos</a>
+                    </li>
+                    <li>
+                        <a href='@Url.Action("Index", "SolicitudBandeja")'>Gestion de Solicitudes</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+     
+        <section id="contenido">
+            
+             @if (ViewBag.TituloMenu != null)
+                    {                                               
+                        <div class="row">
+                            <p id="siga-title-string" class="lead col-sm-11 text-center">
+                                <strong id="web-title">@ViewBag.TituloMenu</strong>
+                            </p>
+                        </div>
+                    }
+
+            @RenderBody()
+        </section>
+        
+
+
+    </section>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/js/sitio")
+    @Scripts.Render("~/js/vistas")
+    @*@Scripts.Render("~/bundles/jqueryui")*@
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/js/boostrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            sitiojs.iniciar();
+        });
+    </script>
+</body>
+</html>

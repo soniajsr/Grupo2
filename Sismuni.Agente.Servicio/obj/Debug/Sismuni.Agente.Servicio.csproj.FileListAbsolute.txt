@@ -1,0 +1,8 @@
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Agente.Servicio\bin\Debug\Sismuni.Agente.Servicio.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Agente.Servicio\bin\Debug\Sismuni.Agente.Servicio.pdb
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Agente.Servicio\obj\Debug\Sismuni.Agente.Servicio.dll
+C:\TFS\Muni.gob.SanIsidro\TP2\Sismuni.Agente.Servicio\obj\Debug\Sismuni.Agente.Servicio.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Agente.Servicio\bin\Debug\Sismuni.Agente.Servicio.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Agente.Servicio\bin\Debug\Sismuni.Agente.Servicio.pdb
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Agente.Servicio\obj\Debug\Sismuni.Agente.Servicio.dll
+D:\TFS\Muni.gob.SanIsidro\TP3\Sismuni.Agente.Servicio\obj\Debug\Sismuni.Agente.Servicio.pdb

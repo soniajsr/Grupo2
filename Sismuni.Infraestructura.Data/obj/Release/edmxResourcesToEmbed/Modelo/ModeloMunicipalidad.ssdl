@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UPC_MUNIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UsuarioTrabajador">
+    <Key>
+      <PropertyRef Name="IdUsuarioTrabajador" />
+    </Key>
+    <Property Name="IdUsuarioTrabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdArea" Type="int" Nullable="false" />
+    <Property Name="IdCargo" Type="int" Nullable="false" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ApePaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApeMaterno" Type="varchar" MaxLength="50" />
+    <Property Name="IdDocumento" Type="int" Nullable="false" />
+    <Property Name="NroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="FechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="FechaCese" Type="datetime" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="IdArea" />
+    </Key>
+    <Property Name="IdArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="UsuRegistro" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="UsuModifica" Type="varchar" MaxLength="15" />
+    <Property Name="FechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GrupoTabla">
+    <Key>
+      <PropertyRef Name="IdGrupo" />
+    </Key>
+    <Property Name="IdGrupo" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="NombreGrupo" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Multitabla">
+    <Key>
+      <PropertyRef Name="IdMultitabla" />
+    </Key>
+    <Property Name="IdMultitabla" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="IdGrupo" Type="varchar" MaxLength="4" />
+    <Property Name="NombreValor" Type="varchar" MaxLength="150" />
+    <Property Name="DescripcionLarga" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="Expediente">
+    <Key>
+      <PropertyRef Name="NumeroExpediente" />
+    </Key>
+    <Property Name="NumeroExpediente" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaExpediente" Type="datetime" />
+    <Property Name="NumeroSolicitud" Type="bigint" />
+    <Property Name="Tipo_Expediente" Type="varchar" MaxLength="7" />
+    <Property Name="Asunto" Type="varchar" MaxLength="400" />
+    <Property Name="Estado" Type="int" />
+  </EntityType>
+  <EntityType Name="SolicitudInformacionMunicipal">
+    <Key>
+      <PropertyRef Name="NumeroSolicitud" />
+    </Key>
+    <Property Name="NumeroSolicitud" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaSolicitud" Type="datetime" />
+    <Property Name="NombresSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="ApellidoPaternoSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="ApellidoMaternoSolicitante" Type="varchar" MaxLength="100" />
+    <Property Name="TipoDocumento" Type="varchar" MaxLength="7" />
+    <Property Name="NumeroDocumento" Type="varchar" MaxLength="30" />
+    <Property Name="Direccion" Type="varchar" MaxLength="70" />
+    <Property Name="Telefono" Type="varchar" MaxLength="20" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="60" />
+    <Property Name="Modo_Envio" Type="varchar" MaxLength="40" />
+    <Property Name="IdUsuarioTrabajador" Type="int" />
+    <Property Name="Tipo_Informacion" Type="varchar" MaxLength="7" />
+    <Property Name="Motivo_Solicitud" Type="varchar" MaxLength="150" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="300" />
+    <Property Name="Estado" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <Association Name="FK__Expedient__Numer__6A30C649">
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="NumeroSolicitud" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="NumeroSolicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Expedient__Tipo___6B24EA82">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="Expediente">
+        <PropertyRef Name="Tipo_Expediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Multitabl__IdGru__1A14E395">
+    <End Role="GrupoTabla" Type="Self.GrupoTabla" Multiplicity="0..1" />
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoTabla">
+        <PropertyRef Name="IdGrupo" />
+      </Principal>
+      <Dependent Role="Multitabla">
+        <PropertyRef Name="IdGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__Estad__6754599E">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__IdUsu__656C112C">
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioTrabajador">
+        <PropertyRef Name="IdUsuarioTrabajador" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="IdUsuarioTrabajador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__Tipo___66603565">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="Tipo_Informacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Solicitud__TipoD__6477ECF3">
+    <End Role="Multitabla" Type="Self.Multitabla" Multiplicity="0..1" />
+    <End Role="SolicitudInformacionMunicipal" Type="Self.SolicitudInformacionMunicipal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Multitabla">
+        <PropertyRef Name="IdMultitabla" />
+      </Principal>
+      <Dependent Role="SolicitudInformacionMunicipal">
+        <PropertyRef Name="TipoDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdAre__3F466844">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdAre__571DF1D5">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdCar__403A8C7D">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdCar__5812160E">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdEst__412EB0B6">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsuarioTr__IdEst__59063A47">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="UsuarioTrabajador" Type="Self.UsuarioTrabajador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="UsuarioTrabajador">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UPC_MUNIModelStoreContainer">
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="ControlPatrimonial" store:Type="Tables" />
+    <EntitySet Name="UsuarioTrabajador" EntityType="Self.UsuarioTrabajador" Schema="ControlPatrimonial" store:Type="Tables" />
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="General" store:Type="Tables" />
+    <EntitySet Name="Cargo" EntityType="Self.Cargo" Schema="General" store:Type="Tables" />
+    <EntitySet Name="GrupoTabla" EntityType="Self.GrupoTabla" Schema="General" store:Type="Tables" />
+    <EntitySet Name="Multitabla" EntityType="Self.Multitabla" Schema="General" store:Type="Tables" />
+    <EntitySet Name="Expediente" EntityType="Self.Expediente" Schema="Transparencia" store:Type="Tables" />
+    <EntitySet Name="SolicitudInformacionMunicipal" EntityType="Self.SolicitudInformacionMunicipal" Schema="Transparencia" store:Type="Tables" />
+    <AssociationSet Name="FK__Expedient__Numer__6A30C649" Association="Self.FK__Expedient__Numer__6A30C649">
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Expedient__Tipo___6B24EA82" Association="Self.FK__Expedient__Tipo___6B24EA82">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="Expediente" EntitySet="Expediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Multitabl__IdGru__1A14E395" Association="Self.FK__Multitabl__IdGru__1A14E395">
+      <End Role="GrupoTabla" EntitySet="GrupoTabla" />
+      <End Role="Multitabla" EntitySet="Multitabla" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__Estad__6754599E" Association="Self.FK__Solicitud__Estad__6754599E">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__IdUsu__656C112C" Association="Self.FK__Solicitud__IdUsu__656C112C">
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__Tipo___66603565" Association="Self.FK__Solicitud__Tipo___66603565">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Solicitud__TipoD__6477ECF3" Association="Self.FK__Solicitud__TipoD__6477ECF3">
+      <End Role="Multitabla" EntitySet="Multitabla" />
+      <End Role="SolicitudInformacionMunicipal" EntitySet="SolicitudInformacionMunicipal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdAre__3F466844" Association="Self.FK__UsuarioTr__IdAre__3F466844">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdAre__571DF1D5" Association="Self.FK__UsuarioTr__IdAre__571DF1D5">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdCar__403A8C7D" Association="Self.FK__UsuarioTr__IdCar__403A8C7D">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdCar__5812160E" Association="Self.FK__UsuarioTr__IdCar__5812160E">
+      <End Role="Cargo" EntitySet="Cargo" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdEst__412EB0B6" Association="Self.FK__UsuarioTr__IdEst__412EB0B6">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsuarioTr__IdEst__59063A47" Association="Self.FK__UsuarioTr__IdEst__59063A47">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="UsuarioTrabajador" EntitySet="UsuarioTrabajador" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
